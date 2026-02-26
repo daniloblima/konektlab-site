@@ -10,9 +10,9 @@
 
 ## DESIGN — Visual e Tipografia
 
-- [ ] **DESIGN-01**: Sistema de design em CSS: variáveis para cores, tipografia, espaçamento
-- [ ] **DESIGN-02**: Tom visual ultra-moderno, calmo, tátil — sem excesso de cor ou elementos decorativos
-- [ ] **DESIGN-03**: Tipografia limpa e legível — hierarquia clara entre headline, subheadline, corpo
+- [x] **DESIGN-01**: Sistema de design em CSS: variáveis para cores, tipografia, espaçamento
+- [x] **DESIGN-02**: Tom visual ultra-moderno, calmo, tátil — sem excesso de cor ou elementos decorativos
+- [x] **DESIGN-03**: Tipografia limpa e legível — hierarquia clara entre headline, subheadline, corpo
 - [ ] **DESIGN-04**: Cards de serviço com estrutura visual que destaca nome + descrição
 - [ ] **DESIGN-05**: Cards de evidência com estrutura "situação → resultado" visualmente clara
 
@@ -36,7 +36,7 @@
 
 - [ ] **PERF-01**: Tamanho total da página abaixo de 1,5 MB
 - [ ] **PERF-02**: Imagens em .webp ou .jpg otimizado com atributo loading="lazy"
-- [ ] **PERF-03**: CSS e JS mínimos, sem dependências desnecessárias
+- [x] **PERF-03**: CSS e JS mínimos, sem dependências desnecessárias
 - [ ] **PERF-04**: Placeholder visual para foto de Danilo (seção 4) caso imagem não esteja disponível
 
 ## DEPLOY — GitHub Pages e DNS
@@ -56,9 +56,9 @@
 | STRUCT-03 | Phase 1 | complete |
 | STRUCT-04 | Phase 1 | complete |
 | STRUCT-05 | Phase 1 | complete |
-| DESIGN-01 | Phase 1 | pending |
-| DESIGN-02 | Phase 1 | pending |
-| DESIGN-03 | Phase 1 | pending |
+| DESIGN-01 | Phase 1 | complete |
+| DESIGN-02 | Phase 1 | complete |
+| DESIGN-03 | Phase 1 | complete |
 | DESIGN-04 | Phase 1 | pending |
 | DESIGN-05 | Phase 1 | pending |
 | INTER-01 | Phase 1 | pending |
@@ -73,7 +73,7 @@
 | RESP-04 | Phase 1 | pending |
 | PERF-01 | Phase 1 | pending |
 | PERF-02 | Phase 1 | pending |
-| PERF-03 | Phase 1 | pending |
+| PERF-03 | Phase 1 | complete |
 | PERF-04 | Phase 1 | pending |
 | DEPLOY-01 | Phase 2 | pending |
 | DEPLOY-02 | Phase 2 | pending |

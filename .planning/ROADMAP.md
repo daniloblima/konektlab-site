@@ -25,7 +25,7 @@ Implementação de landing page estática em duas fases seguindo Speed-to-Value.
 
 Plans:
 - [x] 01-01-PLAN.md — HTML semântico com as 9 seções e copy completo do COPY.md
-- [ ] 01-02-PLAN.md — Design system CSS: variáveis, reset, tipografia e layout base
+- [x] 01-02-PLAN.md — Design system CSS: variáveis, reset, tipografia e layout base
 - [ ] 01-03-PLAN.md — Cards de serviço/evidência + JS interativo (CTAs com UTM, scroll reveal)
 - [ ] 01-04-PLAN.md — Responsividade mobile-first (320px, 768px, 1024px+)
 - [ ] 01-05-PLAN.md — Auditoria de performance, CHANGELOG.md e verificação visual final
@@ -44,5 +44,5 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Implementação | 1/5 | In progress | - |
+| 1. Implementação | 2/5 | In progress | - |
 | 2. Deploy | 0/? | Not started | - |
