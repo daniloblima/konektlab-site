@@ -5,6 +5,52 @@
 
 ---
 
+## [2026-02-27] — v3.2: polish visual, hierarquia e animação hero
+
+### OBJETIVO
+Dez correções identificadas via revisão com screenshots após v3.1: contraste do botão header, respiro no hero, hierarquia quebrada no hero, fonte dos cards problema, seção "Por que" sem hierarquia, seção Sobre com h2 fora do layout de 2 colunas, hover do ícone de serviço incompleto. Somam-se: largura inconsistente entre seções e animação de texto stagger no hero.
+
+### O QUE FOI IMPLEMENTADO
+
+**HTML — index.html**
+
+- Header CTA: classe `cta-dark cta-sm` → `cta-white cta-sm`. Razão: `cta-dark` era outline Licorice sobre fundo transparente (hero escuro) = invisível.
+- Hero: removido parágrafo `.body-text` ("Não importa o estágio..."). O texto migrou para a nova seção `#intro`.
+- Nova seção `#intro`: inserida entre `</section>` do hero e `#problema`. Fundo powder, parágrafo centralizado com `max-width: 720px`. Cria transição suave entre hero escuro e seção problema.
+- Seção Sobre: `<h2>Danilo Lima</h2>` movido de antes de `.sobre-content` para ser o primeiro filho de `.bio`. O h2 agora faz parte da coluna de texto no layout de 2 colunas (foto + bio).
+
+**CSS — style.css**
+
+- `--max-w`: 900px → 1100px. Efeito: todas as seções com `.container` passam a ter a mesma largura que `.container--wide` (1100px). Margens laterais uniformes em toda a página.
+- `.hero h1`: `max-width` 700px → 860px (compensa o container mais largo).
+- `.subheadline`: `max-width` 580px → 680px, `font-size` 2.0625rem → 1.375rem (var(--text-xl)). Reduz competição visual com o h1.
+- `.hero`: `background-color` var(--black-olive) → var(--licorice). Fundo mais escuro e consistente com a marca. `padding-top` 80px → 160px. Mais respiro acima do h1.
+- `.body-text`: bloco removido (classe não tem mais uso no HTML).
+- `.cta-dark`: de outline transparente para sólido Licorice. `background-color: var(--licorice)`, `color: var(--powder)`, `border-color: var(--licorice)`. Hover: `background-color: #000`. Afeta `cta-servicos` e `cta-final-btn`.
+- `.cta-white`: novo bloco. Fundo branco sólido, texto Licorice, sem borda por padrão. No estado `.scrolled`: borda platinum sutil para distinguir do fundo powder.
+- `.intro` e `.intro-text`: novos estilos para a seção de transição.
+- `.card-problema p`: `font-size` 1.5rem → 1.2rem (redução de 20%).
+- `.por-que p`: `font-size` 1.875rem → var(--text-lg) (18px). Texto menor = mais respiro e hierarquia.
+- `.por-que-destaque`: adicionados `background-color: rgba(232,175,88,0.12)`, `padding`, `border-radius`, `border-left: 4px solid var(--mustard)`. De apenas itálico+cor para bloco destacado com caixa.
+- `.bio h2`: `margin-bottom: var(--sp-2)` para espaçamento justo dentro da coluna.
+- `.sobre-content`: `margin-top: var(--sp-3)` → `0` (h2 não está mais acima do flexbox).
+- `.card-icon`: `transition` adicionado `background-color`. Hover via `.card-servico:hover .card-icon`: `background-color: var(--mustard)`, `color: #fff`. O ícone muda o fundo de Sky para Mustard no hover, não apenas a cor do SVG.
+- Keyframes `@keyframes wordIn` e classes `.hero-word`, `.hero-block-animate` para animação stagger do hero.
+- Mobile (`<480px`): `padding-top` do hero ajustado para 100px (era 80px antes).
+
+**JS — main.js**
+
+- `initHeroStagger()`: nova função que quebra o h1 em `<span class="hero-word">` por palavra, aplica `animation-delay` em stagger de 55ms por palavra (base 300ms). Após o h1 completar, aplica `hero-block-animate` na subheadline (delay = fim do h1 + 150ms) e no CTA hero (+ 250ms). Fallback sem JS: sem as classes, todos os elementos permanecem visíveis normalmente.
+- Chamada adicionada no `DOMContentLoaded` antes de `initScrollReveal`.
+- Log atualizado para `[konekt.lab] v3.2 initialized`.
+
+### LIÇÕES APRENDIDAS
+- `--max-w` controla apenas o `.container`. As seções com `.container--wide` sempre usaram `--max-w-wide` (1100px). Igualar `--max-w` a `--max-w-wide` é o caminho mais simples para consistência de margens.
+- Animação stagger por palavra em vanilla JS: iterar `childNodes` do h1 para encontrar o text node direto (linha 1) e processar o span `.h1-line2` (linha 2) separadamente preserva o `display: block` da linha 2.
+- `.hero-word` com `opacity: 0` no CSS garante que o elemento começa invisível antes do JS rodar; após o JS adicionar o span, a animação CSS toma conta.
+
+---
+
 ## [2026-02-27] — v3.1: tipografia, layout e interação
 
 ### OBJETIVO

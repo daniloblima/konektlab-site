@@ -32,7 +32,7 @@
   --text-5xl:  3.75rem;    /* 60px */
 
   /* ── Layout ── */
-  --max-w:      900px;
+  --max-w:      1100px;
   --max-w-wide: 1100px;
 
   /* ── Espaçamento (base 8px) ── */
@@ -226,17 +226,18 @@ h3 {
               border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-/* Variante escura: outline Licorice → preenchido Licorice */
+/* Variante escura: sólido Licorice */
 .cta-dark {
+  background-color: var(--licorice);
+  color: var(--powder);
   border-color: var(--licorice);
-  color: var(--licorice);
 }
 
 .cta-dark:hover {
-  background-color: var(--licorice);
-  color: var(--powder);
+  background-color: #000;
+  border-color: #000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.3);
+  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.4);
 }
 
 .cta-dark:active {
@@ -258,6 +259,23 @@ h3 {
 
 .cta-powder:active {
   transform: translateY(0);
+}
+
+/* Variante branca sólida: para navbar transparente sobre hero escuro */
+.cta-white {
+  background-color: #fff;
+  color: var(--licorice);
+  border: 2px solid transparent;
+}
+.cta-white:hover {
+  background-color: var(--powder);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(27, 18, 18, 0.15);
+}
+.cta-white:active { transform: translateY(0); }
+/* distingue do fundo powder quando scrolled */
+#site-header.scrolled .cta-white {
+  border-color: var(--platinum);
 }
 
 /* Tamanho menor para header */
@@ -288,11 +306,11 @@ section {
    ============================================================ */
 
 .hero {
-  background-color: var(--black-olive);
+  background-color: var(--licorice);
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 160px;
   padding-bottom: var(--sp-16);
   position: relative;
   overflow: hidden;
@@ -310,7 +328,7 @@ section {
 
 .hero h1 {
   color: #fff;
-  max-width: 700px;
+  max-width: 860px;
 }
 
 .h1-line2 {
@@ -319,20 +337,12 @@ section {
 }
 
 .subheadline {
-  font-size: 2.0625rem;
+  font-size: 1.375rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
   margin-bottom: 0;
-  max-width: 580px;
-}
-
-.body-text {
-  font-size: 1.6875rem;
-  line-height: 1.78;
-  color: rgba(255, 255, 255, 0.58);
-  max-width: 600px;
-  margin-bottom: 0;
+  max-width: 680px;
 }
 
 /* ── Hero Shapes ─────────────────────────────────────────── */
@@ -399,6 +409,43 @@ section {
   50%       { transform: translateY(15px); }
 }
 
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  animation: wordIn 0.45s ease forwards;
+}
+
+.hero-block-animate {
+  opacity: 0;
+  animation: wordIn 0.5s ease forwards;
+}
+
+/* ============================================================
+   Seção Intro — transição entre Hero e Problema
+   ============================================================ */
+
+.intro {
+  background-color: var(--powder);
+  padding-top: var(--sp-8);
+  padding-bottom: var(--sp-8);
+  text-align: center;
+}
+
+.intro-text {
+  font-size: var(--text-lg);
+  line-height: 1.78;
+  color: var(--licorice);
+  opacity: 0.72;
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
 /* ============================================================
    Seção Problema — Powder
    ============================================================ */
@@ -445,7 +492,7 @@ section {
 }
 
 .card-problema p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.72;
   color: var(--licorice);
   margin-bottom: 0;
@@ -466,7 +513,7 @@ section {
   margin-bottom: var(--sp-3);
   color: #fff;
   flex-shrink: 0;
-  transition: color var(--t-base);
+  transition: background-color var(--t-base), color var(--t-base);
 }
 
 /* ============================================================
@@ -498,7 +545,7 @@ section {
 }
 
 .por-que p {
-  font-size: 1.875rem;
+  font-size: var(--text-lg);
   line-height: 1.78;
   color: var(--licorice);
   max-width: 680px;
@@ -506,8 +553,13 @@ section {
 
 .por-que-destaque {
   font-style: italic;
-  color: var(--mustard-dark);
+  color: var(--licorice);
   font-weight: 500;
+  background-color: rgba(232, 175, 88, 0.12);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  border-left: 4px solid var(--mustard);
+  max-width: 680px;
 }
 
 /* ============================================================
@@ -522,7 +574,11 @@ section {
   display: flex;
   flex-direction: column;
   gap: var(--sp-6);
-  margin-top: var(--sp-3);
+  margin-top: 0;
+}
+
+.bio h2 {
+  margin-bottom: var(--sp-2);
 }
 
 .foto-wrapper {
@@ -607,7 +663,8 @@ section {
 }
 
 .card-servico:hover .card-icon {
-  color: var(--mustard);
+  background-color: var(--mustard);
+  color: #fff;
 }
 
 .card-servico h3 {
@@ -913,7 +970,7 @@ footer p {
   }
 
   .hero {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 
   .hero .cta-btn {

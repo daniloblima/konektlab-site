@@ -113,12 +113,69 @@ function initAnimatedBackground() {
   });
 }
 
+// ─── Hero Stagger ───────────────────────────────────────────────────────────────
+// Equivalente ao TextStagger da 21st.dev, em vanilla JS.
+// Fallback sem JS: sem as classes, os elementos ficam visíveis normalmente.
+function initHeroStagger() {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+
+  const STAGGER = 55;       // ms por palavra
+  const BASE_DELAY = 300;   // ms antes da primeira palavra
+  let wordIdx = 0;
+
+  function makeWordSpans(text, cls) {
+    const words = text.trim().split(/\s+/).filter(Boolean);
+    const frag = document.createDocumentFragment();
+    words.forEach((w, i) => {
+      const span = document.createElement('span');
+      span.className = cls;
+      span.textContent = w;
+      span.style.animationDelay = (BASE_DELAY + wordIdx * STAGGER) + 'ms';
+      wordIdx++;
+      frag.appendChild(span);
+      if (i < words.length - 1) frag.appendChild(document.createTextNode(' '));
+    });
+    return frag;
+  }
+
+  // Linha 1: text node direto do h1
+  const line2El = h1.querySelector('.h1-line2');
+  const textNode = [...h1.childNodes].find(
+    n => n.nodeType === Node.TEXT_NODE && n.textContent.trim()
+  );
+  if (textNode) textNode.replaceWith(makeWordSpans(textNode.textContent, 'hero-word'));
+
+  // Linha 2: span .h1-line2
+  if (line2El) {
+    const saved = line2El.textContent;
+    line2El.textContent = '';
+    line2El.appendChild(makeWordSpans(saved, 'hero-word'));
+  }
+
+  // Subheadline: bloco animado após h1 terminar
+  const afterH1 = BASE_DELAY + wordIdx * STAGGER + 150;
+  const sub = document.querySelector('.subheadline');
+  if (sub) {
+    sub.style.animationDelay = afterH1 + 'ms';
+    sub.classList.add('hero-block-animate');
+  }
+
+  // Botão CTA hero
+  const cta = document.getElementById('cta-hero');
+  if (cta) {
+    cta.style.animationDelay = (afterH1 + 250) + 'ms';
+    cta.classList.add('hero-block-animate');
+  }
+}
+
 // ─── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initCTAs();
   initStickyHeader();
+  initHeroStagger();
   initScrollReveal();
   initCounters();
   initAnimatedBackground();
-  console.log('[konekt.lab] v3 initialized');
+  console.log('[konekt.lab] v3.2 initialized');
 });
