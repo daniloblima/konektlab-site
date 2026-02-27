@@ -94,6 +94,10 @@
   --pd-secao:   var(--sp-16);  /* padding vertical padrão de todas as seções */
   --pd-intro:   var(--sp-8);   /* padding vertical da seção intro            */
   --gap-p:      var(--sp-3);   /* espaço entre parágrafos dentro das seções  */
+
+  /* Hero — espaços internos independentes */
+  --sp-hero-sub: var(--sp-6);  /* espaço entre h1 e subheadline             */
+  --sp-hero-cta: var(--sp-6);  /* espaço entre subheadline e botão CTA      */
 }
 
 /* ============================================================
@@ -368,7 +372,16 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-6);
+  gap: 0;
+}
+
+/* Espaços internos do hero — edite as variáveis em :root */
+.hero .subheadline {
+  margin-top: var(--sp-hero-sub);
+}
+
+.hero .cta-btn {
+  margin-top: var(--sp-hero-cta);
 }
 
 .hero h1 {
