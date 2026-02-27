@@ -61,7 +61,7 @@
   --shadow-header:     0 1px 16px rgba(27, 18, 18, 0.09);
 
   /* ── Hero glow ── */
-  --hero-glow: rgba(127, 174, 209, 0.22);  /* Sky suave — troque para ajustar */
+  --hero-glow: rgba(127, 174, 209, 0.55);  /* Sky suave — troque para ajustar */
 
   /* ================================================================
      TIPOGRAFIA POR SEÇÃO — edite aqui para ajustar fontes
@@ -71,8 +71,8 @@
      0.875rem = 14px  |  1rem = 16px  |  1.125rem = 18px
      1.25rem  = 20px  |  1.375rem = 22px  |  1.5rem = 24px
      ================================================================ */
-  --fs-hero-sub:     1.375rem;   /* hero — subheadline              */
-  --fs-intro:        1.35rem;    /* intro — parágrafo               */
+  --fs-hero-sub:     1.775rem;   /* hero — subheadline              */
+  --fs-intro:        1.5rem;    /* intro — parágrafo               */
   --fs-card-prob:    1.2rem;     /* problema — texto dos cards      */
   --fs-por-que:      1.125rem;   /* por que — parágrafo             */
   --fs-por-que-dest: 1.375rem;   /* por que — frase destaque        */
@@ -81,6 +81,19 @@
   --fs-evidencia:    0.9375rem;  /* evidências — resultado          */
   --fs-passos:       1rem;       /* como funciona — texto           */
   --fs-cta-final:    1.125rem;   /* CTA final — parágrafo           */
+
+  /* ================================================================
+     ESPAÇAMENTOS EDITÁVEIS — seções e blocos de texto
+     Mesma lógica: edite o valor, salve, refresh.
+
+     Referência rápida:
+     var(--sp-4) = 2rem = 32px  |  var(--sp-6) = 3rem = 48px
+     var(--sp-8) = 4rem = 64px  |  var(--sp-12) = 6rem = 96px
+     var(--sp-16) = 8rem = 128px
+     ================================================================ */
+  --pd-secao:   var(--sp-16);  /* padding vertical padrão de todas as seções */
+  --pd-intro:   var(--sp-8);   /* padding vertical da seção intro            */
+  --gap-p:      var(--sp-3);   /* espaço entre parágrafos dentro das seções  */
 }
 
 /* ============================================================
@@ -126,7 +139,7 @@ ul, ol {
 }
 
 p {
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--gap-p);
 }
 
 p:last-child {
@@ -256,10 +269,11 @@ h3 {
 }
 
 .cta-dark:hover {
-  background-color: #000;
-  border-color: #000;
+  background-color: var(--mustard);
+  color: var(--licorice);
+  border-color: var(--mustard);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.4);
+  box-shadow: 0 6px 20px rgba(232, 175, 88, 0.3);
 }
 
 .cta-dark:active {
@@ -273,10 +287,10 @@ h3 {
 }
 
 .cta-powder:hover {
-  background-color: #fff;
+  background-color: var(--mustard);
   color: var(--licorice);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.15);
+  box-shadow: 0 6px 20px rgba(232, 175, 88, 0.3);
 }
 
 .cta-powder:active {
@@ -290,14 +304,22 @@ h3 {
   border: 2px solid transparent;
 }
 .cta-white:hover {
-  background-color: var(--powder);
+  background-color: var(--mustard);
+  color: var(--licorice);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(27, 18, 18, 0.15);
+  box-shadow: 0 4px 16px rgba(232, 175, 88, 0.3);
 }
 .cta-white:active { transform: translateY(0); }
-/* distingue do fundo powder quando scrolled */
+/* NavBar scrolled: Licorice fill + hover Mustard */
 #site-header.scrolled .cta-white {
-  border-color: var(--platinum);
+  background-color: var(--licorice);
+  color: var(--powder);
+  border-color: transparent;
+}
+#site-header.scrolled .cta-white:hover {
+  background-color: var(--mustard);
+  color: var(--licorice);
+  box-shadow: 0 4px 16px rgba(232, 175, 88, 0.3);
 }
 
 /* Tamanho menor para header */
@@ -319,8 +341,8 @@ h3 {
    ============================================================ */
 
 section {
-  padding-top: var(--sp-16);
-  padding-bottom: var(--sp-16);
+  padding-top: var(--pd-secao);
+  padding-bottom: var(--pd-secao);
 }
 
 /* ============================================================
@@ -454,8 +476,8 @@ section {
 
 .intro {
   background-color: var(--platinum);
-  padding-top: var(--sp-8);
-  padding-bottom: var(--sp-8);
+  padding-top: var(--pd-intro);
+  padding-bottom: var(--pd-intro);
   text-align: center;
 }
 
@@ -662,6 +684,7 @@ section {
 .stat-item {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .stat-value {
