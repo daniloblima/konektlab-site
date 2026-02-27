@@ -1,60 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
 /* ============================================================
-   konekt.lab — Design System
-   Ultra-moderno, calmo, tátil. Sem excessos decorativos.
+   konekt.lab v2 — Design System
+   Paleta da marca: Licorice / Black Olive / Mustard / Sky / Platinum / Powder
+   Tipografia: Archivo Narrow (títulos) + Albert Sans (corpo)
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Albert+Sans:wght@300;400;500;600&display=swap');
+
 :root {
-  /* Cores base */
-  --color-bg: #F9F8F6;           /* Off-white quente — fundo principal */
-  --color-surface: #FFFFFF;      /* Branco puro — cards e superfícies */
-  --color-text: #1A1A1A;         /* Quase preto — texto principal */
-  --color-text-muted: #6B6B6B;   /* Cinza médio — textos secundários */
-  --color-accent: #1A1A1A;       /* Acento primário — mesmo que texto (clean) */
-  --color-border: #E5E3DF;       /* Borda sutil — cards, divisores */
-  --color-cta-bg: #1A1A1A;       /* Fundo do botão CTA */
-  --color-cta-text: #F9F8F6;     /* Texto do botão CTA */
-  --color-placeholder: #D4D0C8;  /* Cinza para placeholder de foto */
+  /* ── Paleta da marca ── */
+  --licorice:    #1B1212;
+  --black-olive: #44423F;
+  --mustard:     #E8AF58;
+  --sky:         #7FAED1;
+  --platinum:    #E7E4DF;
+  --powder:      #F9F7F5;
 
-  /* Tipografia */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.375rem;   /* 22px */
-  --font-size-2xl: 1.75rem;   /* 28px */
-  --font-size-3xl: 2.25rem;   /* 36px */
-  --font-size-4xl: 3rem;      /* 48px */
-  --line-height-tight: 1.2;
-  --line-height-base: 1.6;
-  --line-height-relaxed: 1.75;
+  /* ── Tipografia ── */
+  --font-heading: 'Archivo Narrow', sans-serif;
+  --font-body:    'Albert Sans', sans-serif;
 
-  /* Espaçamento (base 8px) */
-  --space-1: 0.5rem;    /* 8px */
-  --space-2: 1rem;      /* 16px */
-  --space-3: 1.5rem;    /* 24px */
-  --space-4: 2rem;      /* 32px */
-  --space-6: 3rem;      /* 48px */
-  --space-8: 4rem;      /* 64px */
-  --space-12: 6rem;     /* 96px */
-  --space-16: 8rem;     /* 128px */
+  /* ── Escalas ── */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.375rem;   /* 22px */
+  --text-2xl:  1.75rem;    /* 28px */
+  --text-3xl:  2.25rem;    /* 36px */
+  --text-4xl:  3rem;       /* 48px */
+  --text-5xl:  3.75rem;    /* 60px */
 
-  /* Layout */
-  --max-width: 760px;           /* Largura máxima do conteúdo — editorial, não larga */
-  --max-width-wide: 1024px;     /* Para grids de cards */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
+  /* ── Layout ── */
+  --max-w:      760px;
+  --max-w-wide: 1100px;
 
-  /* Transições */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
+  /* ── Espaçamento (base 8px) ── */
+  --sp-1:  0.5rem;
+  --sp-2:  1rem;
+  --sp-3:  1.5rem;
+  --sp-4:  2rem;
+  --sp-6:  3rem;
+  --sp-8:  4rem;
+  --sp-12: 6rem;
+  --sp-16: 8rem;
+
+  /* ── Raios ── */
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-full: 999px;
+
+  /* ── Transições ── */
+  --t-fast: 150ms ease;
+  --t-base: 260ms ease;
+
+  /* ── Sombras ── */
+  --shadow-card:       0 2px 12px rgba(127, 174, 209, 0.15);
+  --shadow-card-hover: 0 8px 32px rgba(127, 174, 209, 0.28);
+  --shadow-header:     0 1px 16px rgba(27, 18, 18, 0.09);
 }
 
 /* ============================================================
-   Reset Global
+   Reset
    ============================================================ */
 
 *, *::before, *::after {
@@ -69,13 +76,14 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--licorice);
+  background-color: var(--powder);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img {
@@ -89,86 +97,13 @@ a {
   text-decoration: none;
 }
 
-ol, ul {
+ul, ol {
   list-style: none;
   padding: 0;
 }
 
-/* ============================================================
-   Layout — Container
-   ============================================================ */
-
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
-}
-
-.container--wide {
-  max-width: var(--max-width-wide);
-}
-
-/* ============================================================
-   Header
-   ============================================================ */
-
-header {
-  padding: var(--space-3) var(--space-4);
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-
-/* ============================================================
-   Seções — padding vertical padrão
-   ============================================================ */
-
-section {
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-12);
-}
-
-/* ============================================================
-   Tipografia — Headings
-   ============================================================ */
-
-h1 {
-  font-size: var(--font-size-3xl);
-  font-weight: 600;
-  line-height: var(--line-height-tight);
-  letter-spacing: -0.03em;
-  color: var(--color-text);
-  margin-bottom: var(--space-3);
-}
-
-h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: 600;
-  line-height: var(--line-height-tight);
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  margin-bottom: var(--space-4);
-}
-
-h3 {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  line-height: var(--line-height-tight);
-  color: var(--color-text);
-  margin-bottom: var(--space-2);
-}
-
 p {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--sp-3);
 }
 
 p:last-child {
@@ -176,167 +111,537 @@ p:last-child {
 }
 
 /* ============================================================
-   Hero
+   Containers
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sp-4);
+  padding-right: var(--sp-4);
+}
+
+.container--wide {
+  max-width: var(--max-w-wide);
+}
+
+/* ============================================================
+   Tipografia — Headings
+   ============================================================ */
+
+h1, h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, var(--text-5xl));
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, var(--text-3xl));
+  margin-bottom: var(--sp-4);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: var(--sp-2);
+}
+
+/* ============================================================
+   Eyebrow Labels
+   ============================================================ */
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: var(--sp-2);
+}
+
+/* Eyebrow em seções claras (powder, platinum) */
+.eyebrow--dark {
+  color: var(--sky);
+}
+
+/* Eyebrow em seção Sky */
+.eyebrow--on-sky {
+  color: var(--licorice);
+  opacity: 0.55;
+}
+
+/* ============================================================
+   Header — sticky, transparente → powder ao rolar
+   ============================================================ */
+
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition: background-color var(--t-base), box-shadow var(--t-base);
+}
+
+#site-header.scrolled {
+  background-color: var(--powder);
+  box-shadow: var(--shadow-header);
+}
+
+.header-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  transition: color var(--t-base);
+}
+
+#site-header.scrolled .logo {
+  color: var(--licorice);
+}
+
+/* ============================================================
+   Botões CTA
+   ============================================================ */
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  padding: 0.875rem 2rem;
+  border-radius: var(--r-md);
+  min-height: 48px;
+  cursor: pointer;
+  transition: background-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+/* Sky → Mustard no hover */
+.cta-sky {
+  background-color: var(--sky);
+  color: #fff;
+}
+
+.cta-sky:hover {
+  background-color: var(--mustard);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(127, 174, 209, 0.4);
+}
+
+.cta-sky:active {
+  transform: translateY(0);
+}
+
+/* Dark (Licorice bg) */
+.cta-dark {
+  background-color: var(--licorice);
+  color: var(--powder);
+}
+
+.cta-dark:hover {
+  background-color: #2d2020;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.3);
+}
+
+/* Tamanho menor para header */
+.cta-sm {
+  font-size: var(--text-sm);
+  padding: 0.6rem 1.25rem;
+  min-height: 40px;
+}
+
+/* Centro de CTA abaixo de grids */
+.cta-center {
+  margin-top: var(--sp-8);
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
+   Seções — padding vertical padrão
+   ============================================================ */
+
+section {
+  padding-top: var(--sp-16);
+  padding-bottom: var(--sp-16);
+}
+
+/* ============================================================
+   Hero — Black Olive
    ============================================================ */
 
 .hero {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
-  background-color: var(--color-bg);
+  background-color: var(--black-olive);
+  padding-top: calc(var(--sp-16) + 80px); /* compensar header fixo */
+  padding-bottom: var(--sp-16);
 }
 
 .hero .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--sp-4);
+}
+
+.hero h1 {
+  color: #fff;
+  max-width: 700px;
 }
 
 .subheadline {
-  font-size: var(--font-size-xl);
+  font-size: var(--text-xl);
   font-weight: 400;
-  color: var(--color-text-muted);
-  line-height: var(--line-height-base);
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
   margin-bottom: 0;
 }
 
 .body-text {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text);
-  max-width: 640px;
+  font-size: var(--text-lg);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.58);
+  max-width: 600px;
+  margin-bottom: 0;
 }
 
 /* ============================================================
-   CTA Button
+   Seção Problema — Powder
    ============================================================ */
 
-.cta-btn {
-  display: inline-block;
-  background-color: var(--color-cta-bg);
-  color: var(--color-cta-text);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--border-radius-md);
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  min-height: 44px;            /* RESP-04: área de toque mínima mobile */
-  line-height: 44px;
-  align-self: flex-start;
-}
-
-.cta-btn:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
-}
-
-.cta-btn:active {
-  transform: translateY(0);
+.problema {
+  background-color: var(--powder);
 }
 
 /* ============================================================
-   Seção Problema — lista numerada
+   Cards Grid — responsivo (base 1 col)
    ============================================================ */
 
-.situacoes {
-  list-style: decimal;
-  padding-left: var(--space-4);
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+
+/* Grade de 2 colunas fixa (para 4 cards do problema) */
+.cards-grid--2col {
+  grid-template-columns: 1fr;
+}
+
+/* ============================================================
+   Card de Problema
+   ============================================================ */
+
+.card-problema {
+  background-color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  border: 1px solid var(--platinum);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.card-problema:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-problema p {
+  font-size: var(--text-base);
+  line-height: 1.72;
+  color: var(--licorice);
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Card Icon — quadrado arredondado Sky
+   ============================================================ */
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+  background-color: var(--sky);
+  border-radius: var(--r-md);
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.situacoes li {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text);
-  padding-left: var(--space-2);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+  color: #fff;
+  flex-shrink: 0;
 }
 
 /* ============================================================
-   Seção Por Que — texto corrido
+   Seção Por Que — Sky background
    ============================================================ */
 
 .por-que {
-  background-color: var(--color-surface);
+  background-color: var(--sky);
+}
+
+.por-que h2 {
+  color: var(--licorice);
 }
 
 .por-que p {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
+  font-size: var(--text-lg);
+  line-height: 1.78;
+  color: var(--licorice);
+  max-width: 680px;
 }
 
 /* ============================================================
-   Seção Sobre — layout com foto
+   Seção Sobre — Powder
    ============================================================ */
+
+.sobre {
+  background-color: var(--powder);
+}
 
 .sobre-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--sp-6);
+  margin-top: var(--sp-3);
 }
 
-.foto-placeholder {
-  width: 180px;
-  height: 180px;
-  background-color: var(--color-placeholder);
-  border-radius: var(--border-radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  font-weight: 500;
+.foto-wrapper {
   flex-shrink: 0;
 }
 
+.foto-danilo {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card-hover);
+}
+
 .bio p {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
+  font-size: var(--text-base);
+  line-height: 1.78;
+  color: var(--licorice);
 }
 
 /* ============================================================
-   Seção Custo da Inação
+   Seção Serviços — Platinum
+   ============================================================ */
+
+.servicos {
+  background-color: var(--platinum);
+}
+
+.card-servico {
+  background-color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.card-servico:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-servico h3 {
+  color: var(--licorice);
+}
+
+.card-servico p {
+  font-size: var(--text-sm);
+  line-height: 1.72;
+  color: #4a4848;
+}
+
+/* ============================================================
+   Seção Evidências — Powder
+   ============================================================ */
+
+.evidencias {
+  background-color: var(--powder);
+}
+
+.card-evidencia {
+  background-color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  border: 1px solid var(--platinum);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.card-evidencia:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.evidencia-numero {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--mustard);
+  line-height: 1;
+  margin-bottom: var(--sp-1);
+}
+
+.evidencia-contexto {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: var(--sp-3);
+}
+
+.card-evidencia .situacao {
+  font-size: var(--text-sm);
+  color: #666;
+  line-height: 1.7;
+  padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--platinum);
+}
+
+.card-evidencia .resultado {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--licorice);
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Seção Custo da Inação — Black Olive
    ============================================================ */
 
 .custo {
-  background-color: var(--color-surface);
+  background-color: var(--black-olive);
+  text-align: center;
 }
 
-.custo p {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-}
-
-/* ============================================================
-   Seção Como Funciona — lista numerada de passos
-   ============================================================ */
-
-.passos {
-  list-style: decimal;
-  padding-left: var(--space-4);
+.custo .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  align-items: center;
+  gap: var(--sp-4);
 }
 
-.passos li {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  padding-left: var(--space-2);
+.custo-text {
+  font-size: var(--text-lg);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 580px;
+  margin-bottom: 0;
 }
 
-.passos li strong {
-  font-weight: 600;
-  display: block;
-  margin-bottom: var(--space-1);
+.custo-destaque {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, var(--text-4xl));
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0;
 }
 
 /* ============================================================
-   Seção CTA Final
+   Seção Como Funciona — Powder
+   ============================================================ */
+
+.como-funciona {
+  background-color: var(--powder);
+}
+
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: var(--sp-2);
+}
+
+.passo {
+  display: flex;
+  gap: var(--sp-4);
+  position: relative;
+}
+
+.passo:not(:last-child) {
+  padding-bottom: var(--sp-8);
+}
+
+/* Linha conectora vertical entre passos */
+.passo:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 48px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sky) 60%, transparent);
+}
+
+.passo-numero {
+  width: 46px;
+  height: 46px;
+  background-color: var(--sky);
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.passo-content {
+  padding-top: 0.55rem; /* alinha visualmente com centro do círculo */
+}
+
+.passo-content h3 {
+  color: var(--licorice);
+  margin-bottom: var(--sp-1);
+}
+
+.passo-content p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: #585454;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   CTA Final — Sky background
    ============================================================ */
 
 .cta-final {
-  background-color: var(--color-bg);
+  background-color: var(--sky);
   text-align: center;
 }
 
@@ -344,102 +649,52 @@ p:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--sp-4);
+}
+
+.cta-final h2 {
+  color: var(--licorice);
+  margin-bottom: 0;
 }
 
 .cta-final p {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  max-width: 600px;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--licorice);
+  max-width: 540px;
+  opacity: 0.82;
 }
 
 /* ============================================================
-   Footer
+   Footer — Licorice
    ============================================================ */
 
 footer {
-  padding: var(--space-6) var(--space-4);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--licorice);
+  padding: var(--sp-6) var(--sp-4);
+}
+
+.footer-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
   text-align: center;
 }
 
 footer p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  color: var(--platinum);
+  opacity: 0.6;
   margin-bottom: 0;
 }
 
 /* ============================================================
-   Cards Grid — layout responsivo (mobile-first: 1 col base)
-   ============================================================ */
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-}
-
-/* ============================================================
-   Cards de Serviço
-   ============================================================ */
-
-.card-servico {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-4);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
-}
-
-.card-servico:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   Cards de Evidência — situação → resultado
-   ============================================================ */
-
-.card-evidencia {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-4);
-}
-
-.card-evidencia .situacao {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: var(--line-height-relaxed);
-  padding-bottom: var(--space-2);
-  margin-bottom: var(--space-2);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.card-evidencia .resultado {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text);
-  margin-bottom: 0;
-}
-
-/* ============================================================
-   Espaçamento: CTA após grid de serviços
-   ============================================================ */
-
-.servicos .cta-btn {
-  margin-top: var(--space-6);
-}
-
-/* ============================================================
-   Scroll Reveal — fade-in ao entrar na viewport
+   Scroll Reveal — fade-in + translateY
    ============================================================ */
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .reveal.is-visible {
@@ -448,48 +703,79 @@ footer p {
 }
 
 /* ============================================================
-   Responsividade — Mobile-first
+   Responsividade — Tablet 640px+
    ============================================================ */
 
-body {
-  overflow-x: hidden; /* previne scroll horizontal em mobile */
-}
-
-/* Centralizar foto placeholder em mobile */
-.foto-placeholder {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Tablet — 640px: grid 2 colunas, sobre lado a lado */
 @media (min-width: 640px) {
+
   .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-grid--2col {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .sobre-content {
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--space-8);
+    gap: var(--sp-8);
   }
 
-  .foto-placeholder {
-    width: 200px;
-    height: 200px;
-    flex-shrink: 0;
-    margin-left: 0;
-    margin-right: 0;
+  .foto-danilo {
+    width: 220px;
+    height: 270px;
   }
 }
 
-/* Desktop — 1024px: grid 3 colunas, foto maior */
+/* ============================================================
+   Responsividade — Desktop 1024px+
+   ============================================================ */
+
 @media (min-width: 1024px) {
+
   .cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .foto-placeholder {
-    width: 240px;
-    height: 240px;
+  /* 4 cards do problema mantêm 2 colunas em desktop */
+  .cards-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .foto-danilo {
+    width: 260px;
+    height: 320px;
+  }
+}
+
+/* ============================================================
+   Mobile — ajustes < 480px
+   ============================================================ */
+
+@media (max-width: 479px) {
+
+  section {
+    padding-top: var(--sp-12);
+    padding-bottom: var(--sp-12);
+  }
+
+  .hero {
+    padding-top: calc(var(--sp-12) + 80px);
+  }
+
+  .hero .cta-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  .cta-center .cta-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cta-final .cta-btn {
+    width: 100%;
+    max-width: 320px;
   }
 }

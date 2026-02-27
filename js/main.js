@@ -1,44 +1,101 @@
-/* konekt.lab — Main JS */
+/* konekt.lab — Main JS v2 */
 
-// ─── CTAs com UTM ─────────────────────────────────────────────────────────────
-// Link centralizado: uma mudança aqui afeta todos os 3 CTAs.
+// ─── CTA Base URL ──────────────────────────────────────────────────────────────
 const CTA_BASE = 'https://calendar.app.google/y9kQeTfRk1hApJw78';
 
+// ─── CTAs com UTM ──────────────────────────────────────────────────────────────
 function initCTAs() {
-  document.getElementById('cta-hero').href =
-    CTA_BASE + '?utm_source=site&utm_medium=cta&utm_campaign=hero';
+  const ctaMap = {
+    'cta-header':    'header',
+    'cta-hero':      'hero',
+    'cta-servicos':  'servicos',
+    'cta-final-btn': 'cta-final',
+  };
 
-  document.getElementById('cta-servicos').href =
-    CTA_BASE + '?utm_source=site&utm_medium=cta&utm_campaign=servicos';
-
-  document.getElementById('cta-final-btn').href =
-    CTA_BASE + '?utm_source=site&utm_medium=cta&utm_campaign=cta-final';
+  for (const [id, campaign] of Object.entries(ctaMap)) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.href = `${CTA_BASE}?utm_source=site&utm_medium=cta&utm_campaign=${campaign}`;
+    }
+  }
 }
 
-// ─── Scroll Reveal ────────────────────────────────────────────────────────────
-// IntersectionObserver: adiciona .is-visible ao entrar na viewport.
-// unobserve após reveal: animação dispara uma vez, sem piscar ao rolar de volta.
+// ─── Header Sticky ─────────────────────────────────────────────────────────────
+// Adiciona .scrolled após 40px de scroll: transparent → powder + shadow.
+function initStickyHeader() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // estado inicial
+}
+
+// ─── Scroll Reveal ─────────────────────────────────────────────────────────────
+// IntersectionObserver com stagger via data-delay (ms).
+// Dispara uma vez; unobserve para não piscar ao rolar de volta.
 function initScrollReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        const delay = parseInt(entry.target.dataset.delay || '0', 10);
+        setTimeout(() => entry.target.classList.add('is-visible'), delay);
+        observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.12 }
   );
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 }
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
-// Nota: smooth scroll via JS desnecessário — css/style.css já tem
-// html { scroll-behavior: smooth } aplicado globalmente.
+// ─── Contador Animado ──────────────────────────────────────────────────────────
+// Anima de 0 ao valor em data-target usando ease-out cubic.
+// Disparado por IntersectionObserver quando o card entra na viewport.
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const startTime = performance.now();
+
+  const tick = (now) => {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = prefix + Math.round(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+
+  requestAnimationFrame(tick);
+}
+
+function initCounters() {
+  const counters = document.querySelectorAll('.evidencia-numero[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((el) => observer.observe(el));
+}
+
+// ─── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initCTAs();
+  initStickyHeader();
   initScrollReveal();
-  console.log('[konekt.lab] JS initialized');
+  initCounters();
+  console.log('[konekt.lab] v2 initialized');
 });

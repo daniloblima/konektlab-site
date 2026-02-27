@@ -8,126 +8,246 @@
   <meta property="og:title" content="konekt.lab — Estratégia Comercial para Tecnologia Aplicada">
   <meta property="og:description" content="Danilo Lima ajuda empresas de tecnologia aplicada a superar o gargalo entre boa tecnologia e tração comercial.">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <header>
-    <span class="logo">konekt.lab</span>
+  <header id="site-header">
+    <div class="header-inner">
+      <span class="logo">konekt.lab</span>
+      <a href="#" class="cta-btn cta-sky cta-sm" id="cta-header" target="_blank" rel="noopener">Agende uma conversa</a>
+    </div>
   </header>
 
   <main>
 
+    <!-- ─── HERO ─────────────────────────────────────────────────── -->
     <section id="hero" class="hero">
       <div class="container">
+        <span class="eyebrow">Estratégia comercial para tecnologia aplicada</span>
         <h1>Sua tecnologia resolve de verdade. O mercado ainda não chegou a essa conclusão.</h1>
         <p class="subheadline">O gargalo entre boa tecnologia e tração comercial quase nunca é técnico.</p>
         <p class="body-text">Não importa o estágio. Empresa nova com tecnologia de ponta tentando entrar no mercado ou empresa consolidada com novo produto que não encontrou tração. O cenário costuma ser o mesmo. A empresa fala da engenharia com entusiasmo. O cliente está pensando se aquilo resolve o problema dele ou não.</p>
-        <a href="#" class="cta-btn" id="cta-hero" target="_blank" rel="noopener">Agende uma conversa</a>
+        <a href="#" class="cta-btn cta-sky" id="cta-hero" target="_blank" rel="noopener">Agende uma conversa</a>
       </div>
     </section>
 
-    <section id="problema" class="problema reveal">
-      <div class="container">
+    <!-- ─── PROBLEMA ──────────────────────────────────────────────── -->
+    <section id="problema" class="problema">
+      <div class="container container--wide">
+        <span class="eyebrow eyebrow--dark">Sintomas</span>
         <h2>Você já viveu alguma dessas situações?</h2>
-        <ol class="situacoes">
-          <li>A reunião vai bem. O cliente faz perguntas, parece interessado. Você responde tudo. No final: "vamos analisar e retornamos." O retorno não vem.</li>
-          <li>Você explica com sua proposta com clareza. A outra pessoa parece entender. Mas não reage, não decide, não avança. E você não entende por quê.</li>
-          <li>Você sabe que a sua solução é melhor do que o que o cliente usa hoje. Na hora de mostrar isso, você apresenta os diferenciais técnicos. O cliente ouve, mas não se mexe.</li>
-          <li>Seus primeiros clientes vieram da rede de contatos. Ir além desse círculo é diferente. Não tem um caminho claro de quem vem depois.</li>
-        </ol>
+        <div class="cards-grid cards-grid--2col">
+
+          <article class="card-problema reveal">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>A reunião vai bem. O cliente faz perguntas, parece interessado. Você responde tudo. No final: "vamos analisar e retornamos." O retorno não vem.</p>
+          </article>
+
+          <article class="card-problema reveal" data-delay="100">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p>Você explica a proposta com clareza. A outra pessoa parece entender. Mas não reage, não decide, não avança. E você não entende por quê.</p>
+          </article>
+
+          <article class="card-problema reveal" data-delay="150">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Você sabe que sua solução é melhor do que o que o cliente usa hoje. Na hora de mostrar isso, você apresenta os diferenciais técnicos. O cliente ouve, mas não se mexe.</p>
+          </article>
+
+          <article class="card-problema reveal" data-delay="200">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 11l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Seus primeiros clientes vieram da rede de contatos. Ir além desse círculo é diferente. Não tem um caminho claro de quem vem depois.</p>
+          </article>
+
+        </div>
       </div>
     </section>
 
+    <!-- ─── POR QUE ────────────────────────────────────────────────── -->
     <section id="por-que" class="por-que reveal">
       <div class="container">
+        <span class="eyebrow eyebrow--on-sky">A raiz do problema</span>
         <h2>Por que isso acontece</h2>
         <p>O problema quase nunca está na tecnologia em si. Está na argumentação. Empresas de tecnologia aplicada tendem a construir o argumento comercial da mesma forma que desenvolveram seu produto: especificações, diferenciais técnicos, comparações com o produto concorrente. O cliente escuta, mas a pergunta que se faz é outra: "como isso vai resolver a dor de cabeça que eu tenho agora?"</p>
       </div>
     </section>
 
+    <!-- ─── SOBRE ──────────────────────────────────────────────────── -->
     <section id="sobre" class="sobre reveal">
       <div class="container">
-        <h2>Quem é Danilo</h2>
+        <span class="eyebrow eyebrow--dark">Quem está do outro lado</span>
+        <h2>Danilo Lima</h2>
         <div class="sobre-content">
-          <div class="foto-placeholder" aria-label="Foto de Danilo Lima">Danilo Lima</div>
+          <div class="foto-wrapper">
+            <img src="./images/danilo-lima.jpg" alt="Danilo Lima" class="foto-danilo">
+          </div>
           <div class="bio">
-            <p>Danilo Lima é engenheiro com 15 anos de carreira entre o desenvolvimento técnico e a estratégia de negócios no setor de energia e tecnologia aplicada. Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e baixa tração comercial. Nos anos seguintes, foi de analista a diretor em menos de quatro anos, construiu segmentações com dezenas de milhões em oportunidade e que viraram referência internacional. Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.</p>
+            <p>Danilo Lima é engenheiro com 15 anos de carreira entre o desenvolvimento técnico e a estratégia de negócios no setor de energia e tecnologia aplicada. Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e baixa tração comercial.</p>
+            <p>Nos anos seguintes, foi de analista a diretor em menos de quatro anos, construiu segmentações com dezenas de milhões em oportunidade e que viraram referência internacional. Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="servicos reveal">
+    <!-- ─── SERVIÇOS ───────────────────────────────────────────────── -->
+    <section id="servicos" class="servicos">
       <div class="container container--wide">
+        <span class="eyebrow eyebrow--dark">Onde atuamos</span>
         <h2>Serviços</h2>
         <div class="cards-grid">
-          <article class="card-servico">
+
+          <article class="card-servico reveal">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>Diagnóstico e Narrativa Comercial</h3>
             <p>Investigação profunda do que está travando a tração: como a empresa se posiciona hoje e por que o argumento atual não está convertendo. O resultado é um argumentário comercial construído na língua do cliente, com o posicionamento revisado e o discurso que faz sentido para quem está do outro lado da mesa.</p>
           </article>
-          <article class="card-servico">
+
+          <article class="card-servico reveal" data-delay="100">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3>Estratégia Comercial e Go-to-Market</h3>
             <p>Para quem tem um produto que funciona e clientes que provam isso, mas precisa de uma rota clara para ir além do que já alcançou. O trabalho mapeia os clientes prioritários e estrutura o movimento comercial para expandir de forma sistemática.</p>
           </article>
-          <article class="card-servico">
+
+          <article class="card-servico reveal" data-delay="200">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>Sustentação Estratégica e Cadência de Execução</h3>
             <p>Para quem quer manter o ritmo de avanço depois de construir a estratégia. Encontros periódicos com pauta definida para avaliação da evolução do trabalho. Mantém a disciplina de implementação, identifica o que deu certo e o que precisa de ajuste para a próxima rodada.</p>
           </article>
+
         </div>
-        <a href="#" class="cta-btn" id="cta-servicos" target="_blank" rel="noopener">Agende uma conversa</a>
+        <div class="cta-center">
+          <a href="#" class="cta-btn cta-sky" id="cta-servicos" target="_blank" rel="noopener">Agende uma conversa</a>
+        </div>
       </div>
     </section>
 
-    <section id="evidencias" class="evidencias reveal">
+    <!-- ─── EVIDÊNCIAS ────────────────────────────────────────────── -->
+    <section id="evidencias" class="evidencias">
       <div class="container container--wide">
+        <span class="eyebrow eyebrow--dark">Resultados reais</span>
         <h2>Evidências</h2>
         <div class="cards-grid">
-          <article class="card-evidencia">
-            <p class="situacao">Empresa sem segmentação real de clientes B2B. Investigação de campo com 20 entrevistas em profundidade.</p>
-            <p class="resultado">Resultado: identificação de R$ 20 milhões por ano em oportunidade. Metodologia adotada em toda a América do Sul.</p>
+
+          <article class="card-evidencia reveal">
+            <div class="evidencia-numero" data-target="20" data-prefix="R$" data-suffix="M">R$0M</div>
+            <p class="evidencia-contexto">em oportunidade identificada por ano</p>
+            <p class="situacao">Multinacional do setor de energia sem segmentação real de clientes B2B. Investigação de campo com 20 entrevistas em profundidade.</p>
+            <p class="resultado">Metodologia adotada em toda a América do Sul.</p>
           </article>
-          <article class="card-evidencia">
-            <p class="situacao">Setor com poucos contatos, sem estrutura prévia, prazo de três meses. Organização do zero com estratégias fora do padrão on e offline.</p>
-            <p class="resultado">Resultado: 100 participantes, 40 reuniões de negócio, empresas multinacionais do setor presente. Feedback do mercado: "marcou o setor."</p>
+
+          <article class="card-evidencia reveal" data-delay="100">
+            <div class="evidencia-numero" data-target="100" data-prefix="" data-suffix="">0</div>
+            <p class="evidencia-contexto">participantes no evento de biogás</p>
+            <p class="situacao">Setor com poucos contatos, sem estrutura prévia, prazo de três meses. Organizado do zero com estratégias fora do padrão on e offline.</p>
+            <p class="resultado">40 reuniões de negócio. Multinacionais presentes. Feedback do mercado: "marcou o setor."</p>
           </article>
-          <article class="card-evidencia">
-            <p class="situacao">Projeto de visibilidade para a empresa, mas que daria prejuízo pelos números originais.</p>
-            <p class="resultado">Resultado: construção de oportunidade comercial dentro do projeto com aditivo contratual que pagou o projeto inteiro.</p>
+
+          <article class="card-evidencia reveal" data-delay="200">
+            <div class="evidencia-numero" data-target="100" data-prefix="" data-suffix="%">0%</div>
+            <p class="evidencia-contexto">do custo do projeto coberto pelo aditivo</p>
+            <p class="situacao">Projeto de P&amp;D no setor solar com números originais no prejuízo.</p>
+            <p class="resultado">Construção de oportunidade comercial dentro do projeto com aditivo contratual que pagou o projeto inteiro.</p>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- ─── CUSTO DA INAÇÃO ───────────────────────────────────────── -->
     <section id="custo" class="custo reveal">
       <div class="container">
-        <h2>O custo da inação</h2>
-        <p>O gargalo comercial raramente aparece como problema declarado. Aparece como pipeline lento, reuniões que não evoluem e a sensação de que o mercado "ainda não está pronto." O custo é real. Só não tem nome.</p>
+        <p class="custo-text">O gargalo comercial raramente aparece como problema declarado. Aparece como pipeline lento, reuniões que não evoluem e a sensação de que o mercado "ainda não está pronto."</p>
+        <p class="custo-destaque">O custo é real. Só não tem nome.</p>
       </div>
     </section>
 
-    <section id="como-funciona" class="como-funciona reveal">
+    <!-- ─── COMO FUNCIONA ─────────────────────────────────────────── -->
+    <section id="como-funciona" class="como-funciona">
       <div class="container">
+        <span class="eyebrow eyebrow--dark">O processo</span>
         <h2>Como funciona</h2>
-        <ol class="passos">
-          <li><strong>Conversa de diagnóstico</strong> — 30 minutos para entender onde estão os maiores desafios e se faz sentido trabalharmos juntos.</li>
-          <li><strong>Proposta com escopo fechado</strong> — Um trabalho definido, com entregável objetivo e prazo claro.</li>
-          <li><strong>Execução junto</strong> — O trabalho acontece com você dentro, não entregue de fora.</li>
-        </ol>
+        <div class="passos">
+
+          <div class="passo reveal">
+            <div class="passo-numero">1</div>
+            <div class="passo-content">
+              <h3>Conversa de diagnóstico</h3>
+              <p>30 minutos para entender onde estão os maiores desafios e se faz sentido trabalharmos juntos.</p>
+            </div>
+          </div>
+
+          <div class="passo reveal" data-delay="150">
+            <div class="passo-numero">2</div>
+            <div class="passo-content">
+              <h3>Proposta com escopo fechado</h3>
+              <p>Um trabalho definido, com entregável objetivo e prazo claro.</p>
+            </div>
+          </div>
+
+          <div class="passo reveal" data-delay="300">
+            <div class="passo-numero">3</div>
+            <div class="passo-content">
+              <h3>Execução junto</h3>
+              <p>O trabalho acontece com você dentro, não entregue de fora.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
+    <!-- ─── CTA FINAL ─────────────────────────────────────────────── -->
     <section id="cta-final" class="cta-final reveal">
       <div class="container">
-        <p>Se você se identificou em alguma das situações acima, o próximo passo é simples. Uma conversa de 30 minutos para entender onde estão as barreiras e como superá-las.</p>
-        <a href="#" class="cta-btn" id="cta-final-btn" target="_blank" rel="noopener">Agende uma conversa</a>
+        <h2>O próximo passo é simples</h2>
+        <p>Se você se identificou em alguma das situações acima, uma conversa de 30 minutos é suficiente para entender onde estão as barreiras e como superá-las.</p>
+        <a href="#" class="cta-btn cta-dark" id="cta-final-btn" target="_blank" rel="noopener">Agende uma conversa</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 konekt.lab</p>
+    <div class="footer-inner">
+      <p>© 2026 konekt.lab</p>
+    </div>
   </footer>
 
   <script src="./js/main.js"></script>
