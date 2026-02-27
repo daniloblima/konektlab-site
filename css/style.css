@@ -59,6 +59,28 @@
   --shadow-card:       0 2px 12px rgba(127, 174, 209, 0.15);
   --shadow-card-hover: 0 8px 32px rgba(127, 174, 209, 0.28);
   --shadow-header:     0 1px 16px rgba(27, 18, 18, 0.09);
+
+  /* ── Hero glow ── */
+  --hero-glow: rgba(127, 174, 209, 0.22);  /* Sky suave — troque para ajustar */
+
+  /* ================================================================
+     TIPOGRAFIA POR SEÇÃO — edite aqui para ajustar fontes
+     Salve e dê refresh; não precisa de build.
+
+     Referência rápida de tamanhos:
+     0.875rem = 14px  |  1rem = 16px  |  1.125rem = 18px
+     1.25rem  = 20px  |  1.375rem = 22px  |  1.5rem = 24px
+     ================================================================ */
+  --fs-hero-sub:     1.375rem;   /* hero — subheadline              */
+  --fs-intro:        1.35rem;    /* intro — parágrafo               */
+  --fs-card-prob:    1.2rem;     /* problema — texto dos cards      */
+  --fs-por-que:      1.125rem;   /* por que — parágrafo             */
+  --fs-por-que-dest: 1.375rem;   /* por que — frase destaque        */
+  --fs-bio:          1rem;       /* sobre — bio                     */
+  --fs-servico:      1rem;       /* serviços — texto dos cards      */
+  --fs-evidencia:    0.9375rem;  /* evidências — resultado          */
+  --fs-passos:       1rem;       /* como funciona — texto           */
+  --fs-cta-final:    1.125rem;   /* CTA final — parágrafo           */
 }
 
 /* ============================================================
@@ -306,7 +328,8 @@ section {
    ============================================================ */
 
 .hero {
-  background-color: var(--licorice);
+  background: radial-gradient(ellipse 80% 55% at 50% -5%, var(--hero-glow), transparent 68%),
+              var(--licorice);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -323,7 +346,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-4);
+  gap: var(--sp-6);
 }
 
 .hero h1 {
@@ -337,7 +360,7 @@ section {
 }
 
 .subheadline {
-  font-size: 1.375rem;
+  font-size: var(--fs-hero-sub);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
@@ -430,14 +453,14 @@ section {
    ============================================================ */
 
 .intro {
-  background-color: var(--powder);
+  background-color: var(--platinum);
   padding-top: var(--sp-8);
   padding-bottom: var(--sp-8);
   text-align: center;
 }
 
 .intro-text {
-  font-size: var(--text-lg);
+  font-size: var(--fs-intro);
   line-height: 1.78;
   color: var(--licorice);
   opacity: 0.72;
@@ -492,7 +515,7 @@ section {
 }
 
 .card-problema p {
-  font-size: 1.2rem;
+  font-size: var(--fs-card-prob);
   line-height: 1.72;
   color: var(--licorice);
   margin-bottom: 0;
@@ -545,7 +568,7 @@ section {
 }
 
 .por-que p {
-  font-size: var(--text-lg);
+  font-size: var(--fs-por-que);
   line-height: 1.78;
   color: var(--licorice);
   max-width: 680px;
@@ -556,10 +579,25 @@ section {
   color: var(--licorice);
   font-weight: 500;
   background-color: rgba(232, 175, 88, 0.12);
-  padding: var(--sp-3) var(--sp-4);
+  padding: var(--sp-4) var(--sp-4);
   border-radius: var(--r-md);
   border-left: 4px solid var(--mustard);
   max-width: 680px;
+}
+
+/* ── Layout 2 colunas — Por que ────────────────────────────── */
+
+.por-que-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile: coluna única */
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+.por-que-dir .por-que-destaque {
+  font-size: var(--fs-por-que-dest);
+  max-width: none;
+  line-height: 1.65;
 }
 
 /* ============================================================
@@ -610,7 +648,7 @@ section {
 }
 
 .bio p {
-  font-size: var(--text-base);
+  font-size: var(--fs-bio);
   line-height: 1.78;
   color: var(--licorice);
 }
@@ -672,7 +710,7 @@ section {
 }
 
 .card-servico p {
-  font-size: var(--text-base);
+  font-size: var(--fs-servico);
   line-height: 1.72;
   color: #4a4848;
 }
@@ -731,7 +769,7 @@ section {
 }
 
 .card-evidencia .resultado {
-  font-size: 0.9375rem;
+  font-size: var(--fs-evidencia);
   font-weight: 600;
   line-height: 1.65;
   color: var(--licorice);
@@ -839,7 +877,7 @@ section {
 }
 
 .passo-content p {
-  font-size: var(--text-base);
+  font-size: var(--fs-passos);
   line-height: 1.7;
   color: #585454;
   margin-bottom: 0;
@@ -867,7 +905,7 @@ section {
 }
 
 .cta-final p {
-  font-size: var(--text-lg);
+  font-size: var(--fs-cta-final);
   line-height: 1.7;
   color: var(--licorice);
   max-width: 540px;
@@ -923,6 +961,11 @@ footer p {
 
   .cards-grid--2col {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .por-que-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8);
   }
 
   .sobre-content {
