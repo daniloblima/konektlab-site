@@ -5,6 +5,60 @@
 
 ---
 
+## [2026-02-27] — v3: mescla v2 + protótipo Lovable
+
+### OBJETIVO
+Mesclar o melhor do site v2 (vanilla HTML/CSS/JS) com o protótipo Lovable (React/Vite/Tailwind), mantendo base vanilla compatível com GitHub Pages sem build step.
+
+### O QUE FOI IMPLEMENTADO
+
+**CSS — style.css (reescrito)**
+
+- Adicionada variável `--mustard-dark: #C4922A` para numerais de evidências
+- Botão CTA: migrado de fill sólido para pílula outline unificada (`border-radius: 999px`, `border: 2px solid`, fundo transparente). Hover: preenche com a cor da variante. `.cta-arrow` (span `→`) com `opacity: 0 → 1` no hover via transition.
+- Hero: adicionado `min-height: 100vh`, `display: flex; align-items: center`, layout centralizado (`text-align: center`), `position: relative; overflow: hidden` para shapes. `.h1-line2` com `color: var(--mustard); display: block`.
+- Hero shapes: 5 divs `.hero-shape--N` com radial-gradient Mustard/Sky em opacidade muito baixa (0.05–0.08). Animação `heroShapeIn` (fade-in, 1.2s, delays escalonados 0/0.2/0.4/0.6/0.8s) + `float` (translateY 0→15px, 12s, delays negativos para phase offset: 0/-2/-4/-6/-8s).
+- Por que: fundo alterado de Sky para Platinum (`#E7E4DF`). Pseudo-elemento `::before` com aspa tipográfica (`"`) em Archivo Narrow 20rem, Mustard opacity 0.07, position absolute top-right. Fonte do parágrafo: 1.25rem. Classe `.por-que-destaque` (frase-chave): itálico + `color: var(--mustard-dark)`.
+- Sobre: `.foto-wrapper` com `position: relative`. `.foto-bg-shape` absoluto, `inset: -12px`, Mustard 12% opacity, `rotate(-3deg)`, z-index 0. `.foto-danilo` com `position: relative; z-index: 1`. `.sobre-stats` flex com gap 3rem. `.stat-value` em Archivo Narrow 2.5rem weight 600 Mustard.
+- Serviços: `.card-servico p` de `--text-sm` para `--text-base` (16px). `.card-servico:hover .card-icon`: color Mustard via transition.
+- Evidências: removidos `background-color`, `border-radius`, `box-shadow`, `border` lateral. Adicionado `border-top: 3px solid var(--mustard-dark)`. `.evidencia-numero` de 3rem para 3.5rem e cor `--mustard-dark`. `.caso-titulo`: Archivo Narrow 18px weight 600.
+- Custo: `.custo-text` de 18px para 1.25rem (20px).
+- Como funciona: `.passo` com `border-left: 3px solid transparent` e `padding-left: 0`. Hover: `border-left-color: Mustard`, `padding-left: 3px`. `.passo-content` com `transition: transform`. `.passo:hover .passo-content`: `translateX(4px)`.
+- Problema: `.card-problema.card-active { background-color: rgba(232,175,88,0.08) }` para JS animated background.
+
+**HTML — index.html (reescrito)**
+
+- Header CTA: adicionado `<span class="cta-arrow">→</span>`
+- Hero: 5 `<div class="hero-shape hero-shape--N">`, h1 com `<span class="h1-line2">` na segunda linha
+- Por que: eyebrow mudado de `eyebrow--on-sky` para `eyebrow--dark`. Parágrafo dividido: texto principal + `<p class="por-que-destaque">` com frase-chave em itálico/Mustard
+- Sobre: `<div class="foto-bg-shape">` inserido dentro de `.foto-wrapper`. `<strong>` nos marcos da bio. `<div class="sobre-stats">` com 3 stat-items (15 anos, 4 anos, R$20M)
+- Evidências: `<h3 class="caso-titulo">` adicionado em cada card (energia/biogás/P&D solar)
+- Todos os CTAs de serviços e CTA Final: `.cta-arrow` adicionado
+
+**JS — main.js**
+
+- `initAnimatedBackground()`: mouseenter em cada `.card-problema` adiciona `.card-active` e remove dos demais. mouseleave no grid remove de todos.
+
+### DECISÕES TÉCNICAS
+
+- Botão pílula unificado: decisão de manter outline em vez de fill para ser mais leve visualmente. O fill no hover cria contraste claro de estado ativo.
+- Por que Platinum em vez de Sky: diferencia visualmente as seções claras (Powder e Platinum alternadas), que é mais correto do que ter Por que e CTA Final ambos em Sky.
+- Hero shapes: opacity extremamente baixa (gradiente 0.05–0.08) para efeito sutil. Não interferem na legibilidade do texto.
+- `heroShapeIn` controla apenas opacity (não transform) para não conflitar com `float` que controla apenas transform. Animações rodando em paralelo sem conflito de propriedades.
+- `foto-bg-shape` com inset: -12px em vez de padding no wrapper: mantém o wrapper no tamanho exato da imagem, shape estoura levemente para fora (efeito decorativo intencional).
+- Stats R$20M: placeholder identificado no plano como "a ser revisado".
+
+### ARQUIVOS MODIFICADOS
+- `css/style.css` — reescrito completo (v2→v3)
+- `index.html` — reescrito completo (v2→v3)
+- `js/main.js` — adicionado `initAnimatedBackground()`
+
+### VERIFICAÇÃO NECESSÁRIA
+- Confirmar que a aspa decorativa `"` está visível no canto superior direito da seção Por Que
+- Confirmar que o R$20M das stats precisa ser revisado pelo usuário (é um placeholder)
+
+---
+
 ## [2026-02-26] — v2: redesign completo com identidade visual da marca
 
 ### OBJETIVO

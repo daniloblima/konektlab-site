@@ -91,11 +91,34 @@ function initCounters() {
   counters.forEach((el) => observer.observe(el));
 }
 
+// ─── Animated Background (cursor-follow nos cards do Problema) ─────────────────
+// mouseenter em cada card → adiciona .card-active, remove dos demais.
+// mouseleave no grid → remove .card-active de todos.
+function initAnimatedBackground() {
+  const grid = document.getElementById('cards-problema');
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll('.card-problema');
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach((c) => c.classList.remove('card-active'));
+      card.classList.add('card-active');
+    });
+  });
+
+  grid.addEventListener('mouseleave', () => {
+    cards.forEach((c) => c.classList.remove('card-active'));
+  });
+}
+
 // ─── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initCTAs();
   initStickyHeader();
   initScrollReveal();
   initCounters();
-  console.log('[konekt.lab] v2 initialized');
+  initAnimatedBackground();
+  console.log('[konekt.lab] v3 initialized');
 });

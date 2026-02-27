@@ -1,5 +1,5 @@
 /* ============================================================
-   konekt.lab v2 — Design System
+   konekt.lab v3 — Design System
    Paleta da marca: Licorice / Black Olive / Mustard / Sky / Platinum / Powder
    Tipografia: Archivo Narrow (títulos) + Albert Sans (corpo)
    ============================================================ */
@@ -8,12 +8,13 @@
 
 :root {
   /* ── Paleta da marca ── */
-  --licorice:    #1B1212;
-  --black-olive: #44423F;
-  --mustard:     #E8AF58;
-  --sky:         #7FAED1;
-  --platinum:    #E7E4DF;
-  --powder:      #F9F7F5;
+  --licorice:     #1B1212;
+  --black-olive:  #44423F;
+  --mustard:      #E8AF58;
+  --mustard-dark: #C4922A;
+  --sky:          #7FAED1;
+  --platinum:     #E7E4DF;
+  --powder:       #F9F7F5;
 
   /* ── Tipografia ── */
   --font-heading: 'Archivo Narrow', sans-serif;
@@ -170,7 +171,6 @@ h3 {
   margin-bottom: var(--sp-2);
 }
 
-/* Eyebrow em seções claras (powder, platinum) */
 .eyebrow--dark {
   color: var(--sky);
 }
@@ -223,31 +223,48 @@ h3 {
 }
 
 /* ============================================================
-   Botões CTA
+   Botões CTA — pílula unificado
    ============================================================ */
 
 .cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   font-family: var(--font-body);
   font-size: var(--text-base);
   font-weight: 500;
   padding: 0.875rem 2rem;
-  border-radius: var(--r-md);
+  border-radius: var(--r-full);
+  border: 2px solid transparent;
   min-height: 48px;
   cursor: pointer;
-  transition: background-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  background-color: transparent;
+  transition: background-color var(--t-fast), color var(--t-fast),
+              border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-/* Sky → Mustard no hover */
+.cta-arrow {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+
+.cta-btn:hover .cta-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Variante Sky: outline → preenchido */
 .cta-sky {
-  background-color: var(--sky);
-  color: #fff;
+  border-color: var(--sky);
+  color: var(--sky);
 }
 
 .cta-sky:hover {
-  background-color: var(--mustard);
+  background-color: var(--sky);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(127, 174, 209, 0.4);
 }
@@ -256,14 +273,15 @@ h3 {
   transform: translateY(0);
 }
 
-/* Dark (Licorice bg) */
+/* Variante escura: outline Licorice → preenchido Licorice */
 .cta-dark {
-  background-color: var(--licorice);
-  color: var(--powder);
+  border-color: var(--licorice);
+  color: var(--licorice);
 }
 
 .cta-dark:hover {
-  background-color: #2d2020;
+  background-color: var(--licorice);
+  color: var(--powder);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(27, 18, 18, 0.3);
 }
@@ -292,18 +310,27 @@ section {
 }
 
 /* ============================================================
-   Hero — Black Olive
+   Hero — Black Olive, centralizado, tela cheia
    ============================================================ */
 
 .hero {
   background-color: var(--black-olive);
-  padding-top: calc(var(--sp-16) + 80px); /* compensar header fixo */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
   padding-bottom: var(--sp-16);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--sp-4);
 }
 
@@ -312,12 +339,18 @@ section {
   max-width: 700px;
 }
 
+.h1-line2 {
+  color: var(--mustard);
+  display: block;
+}
+
 .subheadline {
   font-size: var(--text-xl);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
   margin-bottom: 0;
+  max-width: 580px;
 }
 
 .body-text {
@@ -326,6 +359,70 @@ section {
   color: rgba(255, 255, 255, 0.58);
   max-width: 600px;
   margin-bottom: 0;
+}
+
+/* ── Hero Shapes ─────────────────────────────────────────── */
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hero-shape--1 {
+  width: 480px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(232, 175, 88, 0.08), transparent 70%);
+  top: -60px;
+  left: -120px;
+  animation: heroShapeIn 1.2s ease 0s forwards, float 12s ease-in-out 0s infinite;
+}
+
+.hero-shape--2 {
+  width: 360px;
+  height: 240px;
+  background: radial-gradient(ellipse, rgba(127, 174, 209, 0.08), transparent 70%);
+  top: 10%;
+  right: -80px;
+  animation: heroShapeIn 1.2s ease 0.2s forwards, float 12s ease-in-out -2s infinite;
+}
+
+.hero-shape--3 {
+  width: 280px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(232, 175, 88, 0.06), transparent 70%);
+  bottom: 15%;
+  left: 5%;
+  animation: heroShapeIn 1.2s ease 0.4s forwards, float 12s ease-in-out -4s infinite;
+}
+
+.hero-shape--4 {
+  width: 200px;
+  height: 160px;
+  background: radial-gradient(ellipse, rgba(127, 174, 209, 0.07), transparent 70%);
+  bottom: 20%;
+  right: 10%;
+  animation: heroShapeIn 1.2s ease 0.6s forwards, float 12s ease-in-out -6s infinite;
+}
+
+.hero-shape--5 {
+  width: 320px;
+  height: 220px;
+  background: radial-gradient(ellipse, rgba(232, 175, 88, 0.05), transparent 70%);
+  top: calc(50% - 110px);
+  left: 40%;
+  animation: heroShapeIn 1.2s ease 0.8s forwards, float 12s ease-in-out -8s infinite;
+}
+
+@keyframes heroShapeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(15px); }
 }
 
 /* ============================================================
@@ -346,7 +443,6 @@ section {
   gap: var(--sp-4);
 }
 
-/* Grade de 2 colunas fixa (para 4 cards do problema) */
 .cards-grid--2col {
   grid-template-columns: 1fr;
 }
@@ -361,12 +457,17 @@ section {
   padding: var(--sp-4);
   border: 1px solid var(--platinum);
   box-shadow: var(--shadow-card);
-  transition: transform var(--t-base), box-shadow var(--t-base);
+  transition: transform var(--t-base), box-shadow var(--t-base), background-color 0.4s ease;
 }
 
 .card-problema:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
+}
+
+/* Estado ativo via JS (animated background) */
+.card-problema.card-active {
+  background-color: rgba(232, 175, 88, 0.08);
 }
 
 .card-problema p {
@@ -391,14 +492,31 @@ section {
   margin-bottom: var(--sp-3);
   color: #fff;
   flex-shrink: 0;
+  transition: color var(--t-base);
 }
 
 /* ============================================================
-   Seção Por Que — Sky background
+   Seção Por Que — Platinum
    ============================================================ */
 
 .por-que {
-  background-color: var(--sky);
+  background-color: var(--platinum);
+  position: relative;
+  overflow: hidden;
+}
+
+.por-que::before {
+  content: '\201C';
+  font-family: var(--font-heading);
+  font-size: 20rem;
+  color: var(--mustard);
+  opacity: 0.07;
+  position: absolute;
+  top: -4rem;
+  right: -1rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
 }
 
 .por-que h2 {
@@ -406,10 +524,16 @@ section {
 }
 
 .por-que p {
-  font-size: var(--text-lg);
+  font-size: 1.25rem;
   line-height: 1.78;
   color: var(--licorice);
   max-width: 680px;
+}
+
+.por-que-destaque {
+  font-style: italic;
+  color: var(--mustard-dark);
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -429,9 +553,24 @@ section {
 
 .foto-wrapper {
   flex-shrink: 0;
+  position: relative;
+}
+
+.foto-bg-shape {
+  position: absolute;
+  background: rgba(232, 175, 88, 0.12);
+  border-radius: var(--r-lg);
+  transform: rotate(-3deg);
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+  z-index: 0;
 }
 
 .foto-danilo {
+  position: relative;
+  z-index: 1;
   width: 200px;
   height: 250px;
   object-fit: cover;
@@ -444,6 +583,33 @@ section {
   font-size: var(--text-base);
   line-height: 1.78;
   color: var(--licorice);
+}
+
+.sobre-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--mustard);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: #666;
+  line-height: 1.5;
+  margin-top: 0.25rem;
 }
 
 /* ============================================================
@@ -467,12 +633,16 @@ section {
   box-shadow: var(--shadow-card-hover);
 }
 
+.card-servico:hover .card-icon {
+  color: var(--mustard);
+}
+
 .card-servico h3 {
   color: var(--licorice);
 }
 
 .card-servico p {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   line-height: 1.72;
   color: #4a4848;
 }
@@ -486,24 +656,20 @@ section {
 }
 
 .card-evidencia {
-  background-color: #fff;
-  border-radius: var(--r-lg);
-  padding: var(--sp-4);
-  border: 1px solid var(--platinum);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--t-base), box-shadow var(--t-base);
+  padding: var(--sp-4) 0;
+  border-top: 3px solid var(--mustard-dark);
+  transition: transform var(--t-base);
 }
 
 .card-evidencia:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
 }
 
 .evidencia-numero {
   font-family: var(--font-heading);
-  font-size: var(--text-4xl);
+  font-size: 3.5rem;
   font-weight: 700;
-  color: var(--mustard);
+  color: var(--mustard-dark);
   line-height: 1;
   margin-bottom: var(--sp-1);
 }
@@ -514,7 +680,15 @@ section {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #888;
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+
+.caso-titulo {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--licorice);
+  margin-bottom: var(--sp-2);
 }
 
 .card-evidencia .situacao {
@@ -527,7 +701,7 @@ section {
 }
 
 .card-evidencia .resultado {
-  font-size: var(--text-sm);
+  font-size: 0.9375rem;
   font-weight: 600;
   line-height: 1.65;
   color: var(--licorice);
@@ -551,7 +725,7 @@ section {
 }
 
 .custo-text {
-  font-size: var(--text-lg);
+  font-size: 1.25rem;
   line-height: 1.78;
   color: rgba(255, 255, 255, 0.65);
   max-width: 580px;
@@ -586,6 +760,14 @@ section {
   display: flex;
   gap: var(--sp-4);
   position: relative;
+  border-left: 3px solid transparent;
+  padding-left: 0;
+  transition: border-color var(--t-base), padding-left var(--t-base);
+}
+
+.passo:hover {
+  border-left-color: var(--mustard);
+  padding-left: 3px;
 }
 
 .passo:not(:last-child) {
@@ -621,7 +803,12 @@ section {
 }
 
 .passo-content {
-  padding-top: 0.55rem; /* alinha visualmente com centro do círculo */
+  padding-top: 0.55rem;
+  transition: transform var(--t-base);
+}
+
+.passo:hover .passo-content {
+  transform: translateX(4px);
 }
 
 .passo-content h3 {
@@ -761,12 +948,13 @@ footer p {
   }
 
   .hero {
-    padding-top: calc(var(--sp-12) + 80px);
+    padding-top: 80px;
   }
 
   .hero .cta-btn {
     align-self: stretch;
     text-align: center;
+    justify-content: center;
   }
 
   .cta-center .cta-btn {
@@ -778,4 +966,20 @@ footer p {
     width: 100%;
     max-width: 320px;
   }
+
+  .sobre-stats {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .por-que::before {
+    font-size: 12rem;
+    right: -1rem;
+    top: -2rem;
+  }
+
+  /* Hero shapes menores em mobile */
+  .hero-shape--1 { width: 280px; height: 180px; }
+  .hero-shape--2 { width: 220px; height: 140px; }
+  .hero-shape--5 { display: none; }
 }
