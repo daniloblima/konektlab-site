@@ -4,7 +4,7 @@
    Tipografia: Archivo Narrow (títulos) + Albert Sans (corpo)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Albert+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Albert+Sans:wght@300;400;500;600&family=Nunito:wght@700&display=swap');
 
 :root {
   /* ── Paleta da marca ── */
@@ -32,7 +32,7 @@
   --text-5xl:  3.75rem;    /* 60px */
 
   /* ── Layout ── */
-  --max-w:      760px;
+  --max-w:      900px;
   --max-w-wide: 1100px;
 
   /* ── Espaçamento (base 8px) ── */
@@ -157,31 +157,6 @@ h3 {
 }
 
 /* ============================================================
-   Eyebrow Labels
-   ============================================================ */
-
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sky);
-  margin-bottom: var(--sp-2);
-}
-
-.eyebrow--dark {
-  color: var(--sky);
-}
-
-/* Eyebrow em seção Sky */
-.eyebrow--on-sky {
-  color: var(--licorice);
-  opacity: 0.55;
-}
-
-/* ============================================================
    Header — sticky, transparente → powder ao rolar
    ============================================================ */
 
@@ -210,7 +185,7 @@ h3 {
 }
 
 .logo {
-  font-family: var(--font-heading);
+  font-family: 'Nunito', sans-serif;
   font-size: var(--text-lg);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -218,8 +193,16 @@ h3 {
   transition: color var(--t-base);
 }
 
+.logo-dot {
+  color: var(--mustard);
+}
+
 #site-header.scrolled .logo {
   color: var(--licorice);
+}
+
+#site-header.scrolled .logo-dot {
+  color: var(--mustard);
 }
 
 /* ============================================================
@@ -230,7 +213,6 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   font-family: var(--font-body);
   font-size: var(--text-base);
   font-weight: 500;
@@ -244,35 +226,6 @@ h3 {
               border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-.cta-arrow {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--t-fast), transform var(--t-fast);
-}
-
-.cta-btn:hover .cta-arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Variante Sky: outline → preenchido */
-.cta-sky {
-  border-color: var(--sky);
-  color: var(--sky);
-}
-
-.cta-sky:hover {
-  background-color: var(--sky);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(127, 174, 209, 0.4);
-}
-
-.cta-sky:active {
-  transform: translateY(0);
-}
-
 /* Variante escura: outline Licorice → preenchido Licorice */
 .cta-dark {
   border-color: var(--licorice);
@@ -284,6 +237,27 @@ h3 {
   color: var(--powder);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(27, 18, 18, 0.3);
+}
+
+.cta-dark:active {
+  transform: translateY(0);
+}
+
+/* Variante Powder: fundo Powder, texto Licorice (hero com fundo escuro) */
+.cta-powder {
+  background-color: var(--powder);
+  color: var(--licorice);
+}
+
+.cta-powder:hover {
+  background-color: #fff;
+  color: var(--licorice);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 18, 18, 0.15);
+}
+
+.cta-powder:active {
+  transform: translateY(0);
 }
 
 /* Tamanho menor para header */
@@ -345,7 +319,7 @@ section {
 }
 
 .subheadline {
-  font-size: var(--text-xl);
+  font-size: 2.0625rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.5;
@@ -354,7 +328,7 @@ section {
 }
 
 .body-text {
-  font-size: var(--text-lg);
+  font-size: 1.6875rem;
   line-height: 1.78;
   color: rgba(255, 255, 255, 0.58);
   max-width: 600px;
@@ -471,7 +445,7 @@ section {
 }
 
 .card-problema p {
-  font-size: var(--text-base);
+  font-size: 1.5rem;
   line-height: 1.72;
   color: var(--licorice);
   margin-bottom: 0;
@@ -524,7 +498,7 @@ section {
 }
 
 .por-que p {
-  font-size: 1.25rem;
+  font-size: 1.875rem;
   line-height: 1.78;
   color: var(--licorice);
   max-width: 680px;
@@ -589,7 +563,6 @@ section {
   display: flex;
   gap: 3rem;
   margin-top: var(--sp-4);
-  flex-wrap: wrap;
 }
 
 .stat-item {
@@ -760,14 +733,6 @@ section {
   display: flex;
   gap: var(--sp-4);
   position: relative;
-  border-left: 3px solid transparent;
-  padding-left: 0;
-  transition: border-color var(--t-base), padding-left var(--t-base);
-}
-
-.passo:hover {
-  border-left-color: var(--mustard);
-  padding-left: 3px;
 }
 
 .passo:not(:last-child) {
@@ -800,15 +765,15 @@ section {
   flex-shrink: 0;
   position: relative;
   z-index: 1;
+  transition: background-color var(--t-base);
+}
+
+.passo:hover .passo-numero {
+  background-color: var(--mustard);
 }
 
 .passo-content {
   padding-top: 0.55rem;
-  transition: transform var(--t-base);
-}
-
-.passo:hover .passo-content {
-  transform: translateX(4px);
 }
 
 .passo-content h3 {

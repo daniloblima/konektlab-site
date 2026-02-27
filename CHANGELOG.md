@@ -5,6 +5,57 @@
 
 ---
 
+## [2026-02-27] — v3.1: tipografia, layout e interação
+
+### OBJETIVO
+Sete ajustes pós-v3 identificados em revisão: logo com nova fonte e ponto colorido, remoção de todos os eyebrows, container mais largo, botões unificados em Licorice preenchido, textos de corpo +50% nas seções principais, hover do "Como funciona" simplificado.
+
+### O QUE FOI IMPLEMENTADO
+
+**HTML — index.html**
+
+- Logo: `<span class="logo">konekt<span class="logo-dot">.</span>lab</span>` — permite colorir o ponto independentemente do restante do texto.
+- Google Fonts link: adicionado `family=Nunito:wght@700` ao link existente.
+- Removidos todos os `<span class="eyebrow ...">` (8 instâncias: hero, problema, por-que, sobre, serviços, evidências, como-funciona). Os h2 de cada seção permanecem.
+- Botões: removidos todos os `<span class="cta-arrow">→</span>` (4 instâncias). Classes alteradas:
+  - `cta-header`: `cta-sky cta-sm` → `cta-dark cta-sm`
+  - `cta-hero`: `cta-sky` → `cta-powder` (hero tem fundo escuro, Licorice seria invisível)
+  - `cta-servicos`: `cta-sky` → `cta-dark`
+  - `cta-final-btn`: mantido `cta-dark`
+
+**CSS — style.css**
+
+- `--max-w`: 760px → 900px. Efeito: seções com `.container` ganham 140px de largura. Sobre: 3 stats cabem na mesma linha sem wrap (3×~140px + 2×48px gap ≈ 516px < 576px disponíveis).
+- `@import` Google Fonts: adicionado `family=Nunito:wght@700`.
+- `.logo`: `font-family` alterado de `var(--font-heading)` para `'Nunito', sans-serif`.
+- `.logo-dot`: novo seletor, `color: var(--mustard)`.
+- `#site-header.scrolled .logo-dot`: `color: var(--mustard)` — preserva Mustard após scroll, sobrescreve herança de cor do `.logo` que muda para Licorice.
+- Eyebrows removidos: excluídos os blocos `.eyebrow`, `.eyebrow--dark`, `.eyebrow--on-sky` (nenhum elemento usa mais essas classes).
+- `.cta-btn`: removido `gap: 0.5rem` (era necessário apenas pela seta).
+- `.cta-sky` e `.cta-sky:hover` e `.cta-sky:active`: removidos.
+- `.cta-arrow` e `.cta-btn:hover .cta-arrow`: removidos.
+- `.cta-dark:active`: adicionado `transform: translateY(0)`.
+- `.cta-powder`: novo bloco — `background-color: var(--powder); color: var(--licorice)`. Hover: `background-color: #fff`, `translateY(-2px)`, shadow leve.
+- `.subheadline`: `font-size` de `var(--text-xl)` (22px) para `2.0625rem` (33px, +50%).
+- `.body-text`: `font-size` de `var(--text-lg)` (18px) para `1.6875rem` (27px, +50%).
+- `.card-problema p`: `font-size` de `var(--text-base)` (16px) para `1.5rem` (24px, +50%).
+- `.por-que p`: `font-size` de `1.25rem` (20px) para `1.875rem` (30px, +50%).
+- `.sobre-stats`: removido `flex-wrap: wrap` (container maior garante que as 3 stats caibam; mobile mantido via media query `< 480px`).
+- `.passo`: removidos `border-left: 3px solid transparent`, `padding-left: 0`, e `transition: border-color, padding-left`.
+- `.passo:hover`: bloco removido.
+- `.passo-content`: removido `transition: transform`.
+- `.passo:hover .passo-content`: bloco removido.
+- `.passo-numero`: adicionado `transition: background-color var(--t-base)`.
+- `.passo:hover .passo-numero`: novo seletor, `background-color: var(--mustard)`.
+
+### DECISÕES TÉCNICAS
+
+- `cta-powder` no hero (em vez de `cta-dark`): fundo Black Olive (#44423F) tornaria Licorice fill quase invisível. Powder fill mantém contraste alto e é visualmente distinto dos demais CTAs do site.
+- Remoção do `flex-wrap` no `.sobre-stats`: com container em 900px, as 3 stats cabem sem wrap. A media query `< 480px` com `flex-direction: column` cobre mobile. Manter wrap em desktop era defensivo mas desnecessário.
+- Hover "Como funciona" simplificado: o deslocamento de border + padding + translateX criava micro-jank em alguns browsers. Trocar por mudança de cor no círculo é mais limpo e suficiente como feedback visual.
+
+---
+
 ## [2026-02-27] — v3: mescla v2 + protótipo Lovable
 
 ### OBJETIVO
