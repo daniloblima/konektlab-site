@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Planejamento interno (Claude/GSD)
+.planning/
+HANDOFF.md
+RETOMADA.md
