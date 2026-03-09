@@ -72,15 +72,15 @@
      1.25rem  = 20px  |  1.375rem = 22px  |  1.5rem = 24px
      ================================================================ */
   --fs-hero-sub:     1.775rem;   /* hero — subheadline              */
-  --fs-intro:        1.5rem;    /* intro — parágrafo               */
-  --fs-card-prob:    1.2rem;     /* problema — texto dos cards      */
-  --fs-por-que:      1.125rem;   /* por que — parágrafo             */
+  --fs-intro:        1.5rem;     /* intro — parágrafo               */
+  --fs-card-prob:    1.35rem;     /* problema — texto dos cards      */
+  --fs-por-que:      1.25rem;    /* por que — parágrafo             */
   --fs-por-que-dest: 1.375rem;   /* por que — frase destaque        */
   --fs-bio:          1rem;       /* sobre — bio                     */
-  --fs-servico:      1rem;       /* serviços — texto dos cards      */
-  --fs-evidencia:    0.9375rem;  /* evidências — resultado          */
-  --fs-passos:       1rem;       /* como funciona — texto           */
-  --fs-cta-final:    1.125rem;   /* CTA final — parágrafo           */
+  --fs-servico:      1.125rem;   /* serviços — texto dos cards      */
+  --fs-evidencia:    1rem;       /* evidências — resultado          */
+  --fs-passos:       1.25rem;    /* como funciona — texto           */
+  --fs-cta-final:    1.25rem;    /* CTA final — parágrafo           */
 
   /* ================================================================
      ESPAÇAMENTOS EDITÁVEIS — seções e blocos de texto
@@ -92,7 +92,7 @@
      var(--sp-16) = 8rem = 128px
      ================================================================ */
   --pd-secao:   var(--sp-16);  /* padding vertical padrão de todas as seções */
-  --pd-intro:   var(--sp-8);   /* padding vertical da seção intro            */
+  --pd-intro:   var(--sp-16);   /* padding vertical da seção intro            */
   --gap-p:      var(--sp-3);   /* espaço entre parágrafos dentro das seções  */
 
   /* Hero — espaços internos independentes */
@@ -179,7 +179,7 @@ h1, h2 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, var(--text-5xl));
+  font-size: clamp(2.25rem, 5vw, var(--text-5xl));
 }
 
 h2 {
@@ -779,7 +779,7 @@ section {
 }
 
 .evidencia-contexto {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -796,7 +796,7 @@ section {
 }
 
 .card-evidencia .situacao {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: #666;
   line-height: 1.7;
   padding-bottom: var(--sp-2);
@@ -829,7 +829,7 @@ section {
 }
 
 .custo-text {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.78;
   color: rgba(255, 255, 255, 0.65);
   max-width: 580px;

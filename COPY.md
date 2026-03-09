@@ -47,7 +47,11 @@ O problema quase nunca está na tecnologia em si. Está na argumentação. Empre
 
 ## 4. Quem é Danilo
 
-Danilo Lima é engenheiro com 15 anos de carreira entre o desenvolvimento técnico e a estratégia de negócios no setor de energia e tecnologia aplicada. Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e baixa tração comercial. Nos anos seguintes, foi de analista a diretor em menos de quatro anos, construiu segmentações com dezenas de milhões em oportunidade e que viraram referência internacional. Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.
+Danilo Lima é engenheiro eletricista com mestrado em energias renováveis na Alemanha.
+
+Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e mercado que não compra. Na carreira corporativa que se seguiu, foi de analista a diretor em menos de quatro anos, em empresas do setor de energia. Em uma delas, construiu uma metodologia de segmentação que identificou R$20 milhões por ano em oportunidade e foi adotada em toda a América do Sul.
+
+Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.
 
 ---
 
@@ -55,7 +59,7 @@ Danilo Lima é engenheiro com 15 anos de carreira entre o desenvolvimento técni
 
 ### Diagnóstico e Narrativa Comercial
 
-Investigação profunda do que está travando a tração: como a empresa se posiciona hoje e por que o argumento atual não está convertendo. O resultado é um argumentário comercial construído na língua do cliente, com o posicionamento revisado e o discurso que faz sentido para quem está do outro lado da mesa.
+O trabalho investiga onde o argumento comercial perde força e por que o discurso atual não está convertendo. O resultado é um argumentário comercial construído na língua do cliente, com o posicionamento revisado e o discurso que faz sentido para quem está do outro lado da mesa.
 
 ### Estratégia Comercial e Go-to-Market
 
@@ -112,6 +116,36 @@ Se você se identificou em alguma das situações acima, o próximo passo é sim
 ## Notas de revisão
 
 - [x] Revisar transições entre seções lendo o todo em sequência
-- [x] Hero fechado: "A empresa fala da engenharia com entusiasmo. O cliente está pensando se isso resolve o problema dele ou não."
+- [x] Hero fechado: "A empresa fala da engenharia com entusiasmo. O cliente está pensando se aquilo resolve o problema dele ou não."
+- [x] Subheadline: bold em "quase nunca é técnico"
+- [x] Intro body: bold no lado do cliente; três blocos (abertura / setup / contraste)
+- [x] Bio: dividida em 3 parágrafos — quem é / carreira / o que traz hoje
+- [x] Serviço 1: removido "travando", removidos dois pontos
+- [x] LinkedIn: serviços alinhados (3 serviços, mesmos nomes da landing page)
 - [ ] Definir link/formulário para o CTA "Agende uma conversa"
-- [ ] Considerar adicionar foto ou elemento visual na seção "Quem é Danilo"
+
+## Backlog de ajustes pendentes (sessão 2026-03-09)
+
+### 2. Problema amplificado
+- [ ] Adicionar negrito na parte mais importante de cada card
+
+### 3. Por que isso acontece
+- [ ] Adicionar negrito no corpo do texto
+- [ ] Repensar tratamento da caixa de destaque (itálico não está funcionando visualmente)
+
+### 4. Quem é Danilo
+- [ ] Ajustar tamanho de fonte do texto e hierarquia visual
+- [ ] Corrigir caixa de fundo da foto desalinhada no mobile
+- [ ] Repensar os três marcos — conteúdo em aberto; formato mantido: linha mustard + uma linha de explicação
+
+### 5. Serviços
+- [ ] Verificar negrito pontual
+- [ ] Verificar equilíbrio de tamanho de texto entre os três cards
+
+### 6. Evidências — PRIORIDADE ALTA
+- [ ] Formato: padronizar hierarquia dos 5 tipos de texto (número / legenda do número / título do case / contexto / resultado)
+- [ ] Conteúdo: revisar os três cases para alinhar com posicionamento atual do LinkedIn
+
+### 7. CTA Final
+- [ ] Aumentar tamanho do texto
+- [ ] Adicionar negrito em palavra-chave
