@@ -13,11 +13,15 @@ Sua tecnologia resolve de verdade. O mercado ainda não chegou a essa conclusão
 
 **Subheadline**
 
-O gargalo entre boa tecnologia e tração comercial quase nunca é técnico.
+O gargalo entre boa tecnologia e tração comercial **quase nunca é técnico.**
 
-**Corpo**
+**Corpo (seção Intro)**
 
-Não importa o estágio. Empresa nova com tecnologia de ponta tentando entrar no mercado ou empresa consolidada com novo produto que não encontrou tração. O cenário costuma ser o mesmo. A empresa fala da engenharia com entusiasmo. O cliente está pensando se aquilo resolve o problema dele ou não.
+Não importa o estágio.
+
+Empresa que está entrando no mercado agora, ou empresa consolidada com um produto novo que não encontrou tração. O cenário costuma ser o mesmo.
+
+A empresa fala da engenharia com entusiasmo. **O cliente está pensando se aquilo resolve o problema dele ou não.**
 
 **CTA**
 
@@ -29,19 +33,21 @@ Agende uma conversa
 
 Você já viveu alguma dessas situações?
 
-1. A reunião vai bem. O cliente faz perguntas, parece interessado. Você responde tudo. No final: "vamos analisar e retornamos." O retorno não vem.
+1. A reunião vai bem. O cliente faz perguntas, parece interessado. Você responde tudo. No final: "vamos analisar e retornamos." **O retorno não vem.**
 
-2. Você explica com sua proposta com clareza. A outra pessoa parece entender. Mas não reage, não decide, não avança. E você não entende por quê.
+2. Você explica a proposta com clareza. A outra pessoa parece entender. Mas não reage, não decide, não avança. **E você não entende por quê.**
 
-3. Você sabe que a sua solução é melhor do que o que o cliente usa hoje. Na hora de mostrar isso, você apresenta os diferenciais técnicos. O cliente ouve, mas não se mexe.
+3. Você sabe que a sua solução é melhor do que o que o cliente usa hoje. Na hora de mostrar isso, você apresenta os diferenciais técnicos. **O cliente ouve, mas não se mexe.**
 
-4. Seus primeiros clientes vieram da rede de contatos. Ir além desse círculo é diferente. Não tem um caminho claro de quem vem depois.
+4. Seus primeiros clientes vieram da rede de contatos. Ir além desse círculo é diferente. **Não tem um caminho claro de quem vem depois.**
 
 ---
 
 ## 3. Por que isso acontece
 
-O problema quase nunca está na tecnologia em si. Está na argumentação. Empresas de tecnologia aplicada tendem a construir o argumento comercial da mesma forma que desenvolveram seu produto: especificações, diferenciais técnicos, comparações com o produto concorrente. O cliente escuta, mas a pergunta que se faz é outra: "como isso vai resolver a dor de cabeça que eu tenho agora?"
+O problema quase nunca está na tecnologia em si. **Está na argumentação.** Empresas de tecnologia aplicada tendem a construir o argumento comercial da mesma forma que desenvolveram seu produto: especificações, diferenciais técnicos, comparações com o produto concorrente.
+
+> O cliente escuta, mas a pergunta que se faz é outra: "como isso vai resolver a dor de cabeça que eu tenho agora?"
 
 ---
 
@@ -49,9 +55,17 @@ O problema quase nunca está na tecnologia em si. Está na argumentação. Empre
 
 Danilo Lima é engenheiro eletricista com mestrado em energias renováveis na Alemanha.
 
-Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e mercado que não compra. Na carreira corporativa que se seguiu, foi de analista a diretor em menos de quatro anos, em empresas do setor de energia. Em uma delas, construiu uma metodologia de segmentação que identificou R$20 milhões por ano em oportunidade e foi adotada em toda a América do Sul.
+Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e mercado que não compra. Na carreira corporativa que se seguiu, foi de **analista a diretor em menos de quatro anos**, em empresas do setor de energia. Em uma delas, construiu uma metodologia de segmentação que identificou R$20 milhões por ano em oportunidade e foi adotada em toda a América do Sul.
 
 Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.
+
+**Três marcos (formato: valor mustard + label):**
+
+| Valor | Label |
+|---|---|
+| Engenheiro | que fundou empresa, foi gerente e assumiu diretoria |
+| Do projeto ao mercado | projetista, marketing, inteligência comercial e estratégia |
+| Prêmio Salesforce | plataforma de vendas B2B no setor de energia |
 
 ---
 
@@ -68,8 +82,6 @@ Para quem tem um produto que funciona e clientes que provam isso, mas precisa de
 ### Sustentação Estratégica e Cadência de Execução
 
 Para quem quer manter o ritmo de avanço depois de construir a estratégia. Encontros periódicos com pauta definida para avaliação da evolução do trabalho. Mantém a disciplina de implementação, identifica o que deu certo e o que precisa de ajuste para a próxima rodada.
-
-
 
 ---
 
@@ -113,39 +125,24 @@ Se você se identificou em alguma das situações acima, o próximo passo é sim
 
 ---
 
-## Notas de revisão
-
-- [x] Revisar transições entre seções lendo o todo em sequência
-- [x] Hero fechado: "A empresa fala da engenharia com entusiasmo. O cliente está pensando se aquilo resolve o problema dele ou não."
-- [x] Subheadline: bold em "quase nunca é técnico"
-- [x] Intro body: bold no lado do cliente; três blocos (abertura / setup / contraste)
-- [x] Bio: dividida em 3 parágrafos — quem é / carreira / o que traz hoje
-- [x] Serviço 1: removido "travando", removidos dois pontos
-- [x] LinkedIn: serviços alinhados (3 serviços, mesmos nomes da landing page)
-- [ ] Definir link/formulário para o CTA "Agende uma conversa"
-
 ## Backlog de ajustes pendentes (sessão 2026-03-09)
 
-### 2. Problema amplificado
-- [ ] Adicionar negrito na parte mais importante de cada card
-
-### 3. Por que isso acontece
-- [ ] Adicionar negrito no corpo do texto
-- [ ] Repensar tratamento da caixa de destaque (itálico não está funcionando visualmente)
-
 ### 4. Quem é Danilo
-- [ ] Ajustar tamanho de fonte do texto e hierarquia visual
+- [x] Repensar os três marcos — Engenheiro / Do projeto ao mercado / Prêmio Salesforce
+- [x] Ajustar tamanho de fonte dos marcos (stat-value: 1.35rem)
 - [ ] Corrigir caixa de fundo da foto desalinhada no mobile
-- [ ] Repensar os três marcos — conteúdo em aberto; formato mantido: linha mustard + uma linha de explicação
 
 ### 5. Serviços
 - [ ] Verificar negrito pontual
 - [ ] Verificar equilíbrio de tamanho de texto entre os três cards
 
 ### 6. Evidências — PRIORIDADE ALTA
-- [ ] Formato: padronizar hierarquia dos 5 tipos de texto (número / legenda do número / título do case / contexto / resultado)
+- [ ] Formato: padronizar hierarquia dos 5 tipos de texto (número / legenda / título do case / contexto / resultado)
 - [ ] Conteúdo: revisar os três cases para alinhar com posicionamento atual do LinkedIn
 
 ### 7. CTA Final
 - [ ] Aumentar tamanho do texto
 - [ ] Adicionar negrito em palavra-chave
+
+### Outros
+- [ ] Definir link/formulário para o CTA "Agende uma conversa"
