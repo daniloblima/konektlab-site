@@ -980,14 +980,17 @@ footer p {
   align-items: center;
 }
 
-.nav-link-main {
+#site-header .nav-link-main {
+  display: inline-flex;
+  align-items: center;
   font-size: var(--text-sm);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.72);
   transition: color var(--t-fast);
+  line-height: 1;
 }
 
-.nav-link-main:hover {
+#site-header .nav-link-main:hover {
   color: #fff;
 }
 
