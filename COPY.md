@@ -53,19 +53,19 @@ O problema quase nunca está na tecnologia em si. **Está na argumentação.** E
 
 ## 4. Quem é Danilo
 
-Danilo Lima é engenheiro eletricista com mestrado em energias renováveis na Alemanha.
+Danilo Lima é engenheiro eletricista com mestrado em energias renováveis na Alemanha. Fundou uma empresa de tecnologia solar que não decolou porque **entendia tudo do produto e quase nada de como o mercado compra**.
 
-Fundou uma empresa de tecnologia que não decolou e foi lá que vivenciou pela primeira vez o contraste entre produto bom e mercado que não compra. Na carreira corporativa que se seguiu, foi de **analista a diretor em menos de quatro anos**, em empresas do setor de energia. Em uma delas, construiu uma metodologia de segmentação que identificou R$20 milhões por ano em oportunidade e foi adotada em toda a América do Sul.
+Na carreira que se seguiu, esteve do lado comercial e estratégico em empresas como AES Brasil, Raízen e 2W Energia.
 
-Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e a execução que funcionou, é o que fundamenta o trabalho de diagnosticar onde a tecnologia não se comunica com o mercado e encontrar caminhos para impulsionar o crescimento.
+Em uma delas, construiu uma metodologia de segmentação que identificou **R$20 milhões por ano em oportunidade** e foi adotada em toda a América do Sul.
 
 **Três marcos (formato: valor mustard + label):**
 
 | Valor | Label |
 |---|---|
-| Engenheiro | que fundou empresa, foi gerente e assumiu diretoria |
-| Do projeto ao mercado | projetista, marketing, inteligência comercial e estratégia |
-| Prêmio Salesforce | plataforma de vendas B2B no setor de energia |
+| Engenheiro que fundou empresa | também foi gerente e assumiu diretoria |
+| Do projeto ao mercado | projetista, marketing, inteligência e estratégia |
+| Reconhecimento Salesforce | plataforma de vendas B2B no setor de energia |
 
 ---
 
@@ -73,33 +73,37 @@ Esse percurso, entre o técnico, os negócios e o comercial, entre o fracasso e 
 
 ### Diagnóstico e Narrativa Comercial
 
-O trabalho investiga onde o argumento comercial perde força e por que o discurso atual não está convertendo. O resultado é um argumentário comercial construído na língua do cliente, com o posicionamento revisado e o discurso que faz sentido para quem está do outro lado da mesa.
+Para quem tem um produto bom mas ainda precisa afinar o discurso comercial. O resultado é um argumentário **construído na língua do cliente**, com o posicionamento revisado e a mensagem que faz sentido para quem está do outro lado da mesa.
 
 ### Estratégia Comercial e Go-to-Market
 
-Para quem tem um produto que funciona e clientes que provam isso, mas precisa de uma rota clara para ir além do que já alcançou. O trabalho mapeia os clientes prioritários e estrutura o movimento comercial para expandir de forma sistemática.
+Para quem tem um produto que funciona e clientes que provam isso, mas precisa de **uma rota clara para ir além do que já alcançou**. O trabalho mapeia os clientes prioritários e estrutura o movimento comercial para expandir de forma sistemática.
 
 ### Sustentação Estratégica e Cadência de Execução
 
-Para quem quer manter o ritmo de avanço depois de construir a estratégia. Encontros periódicos com pauta definida para avaliação da evolução do trabalho. Mantém a disciplina de implementação, identifica o que deu certo e o que precisa de ajuste para a próxima rodada.
+Para quem quer **manter o ritmo de avanço** depois de construir a estratégia. O trabalho se dá em encontros periódicos com pauta definida, para avaliar o que evoluiu, identificar o que funcionou e ajustar o que precisa mudar para a próxima rodada.
 
 ---
 
 ## 6. Evidências
 
-### Multinacional do setor de energia
+### Segmentação e mapeamento de mercado
 
-Empresa sem segmentação real de clientes B2B.
-Investigação de campo com 20 entrevistas em profundidade. Resultado: identificação de R$ 20 milhões por ano em oportunidade. Metodologia adotada em toda a América do Sul.
+**R$20M** em oportunidade identificada por ano
 
-### Evento de matchmaking no setor de biogás
+Multinacional do setor de energia sem segmentação real de clientes B2B. Investigação de campo com 20 entrevistas em profundidade. Metodologia adotada em toda a América do Sul.
 
-Setor com poucos contatos, sem estrutura prévia, prazo de três meses.
-Organização do zero com estratégias fora do padrão on e offline. Resultado: 100 participantes, 40 reuniões de negócio, empresas multinacionais do setor presente. Feedback do mercado: "marcou o setor."
+### Evento setorial construído do zero
 
-### Projeto de P&D de indústria no setor solar
+**100** participantes no evento de biogás
 
-Projeto de visibilidade para a empresa, mas que daria prejuízo pelos números originais. Resultado: construção de oportunidade comercial dentro do projeto com aditivo contratual que pagou o projeto inteiro.
+Setor com poucos contatos, sem estrutura prévia, prazo de três meses. Organizado do zero com estratégias fora do padrão on e offline. 40 reuniões de negócio. Multinacionais presentes. Feedback do mercado: "marcou o setor."
+
+### Oportunidade comercial em projeto de P&D
+
+**100%** do custo do projeto coberto pelo aditivo
+
+Projeto de P&D no setor solar com números originais no prejuízo. Construção de oportunidade comercial dentro do projeto com aditivo contratual que pagou o projeto inteiro.
 
 ---
 
@@ -119,7 +123,7 @@ O gargalo comercial raramente aparece como problema declarado. Aparece como pipe
 
 ## 9. CTA Final
 
-Se você se identificou em alguma das situações acima, o próximo passo é simples. Uma conversa de 30 minutos para entender onde estão as barreiras e como superá-las.
+Se você se identificou em alguma das situações acima, uma conversa de **30 minutos** é suficiente para entender onde estão as barreiras e como superá-las.
 
 **Agende uma conversa**
 
@@ -127,22 +131,12 @@ Se você se identificou em alguma das situações acima, o próximo passo é sim
 
 ## Backlog de ajustes pendentes (sessão 2026-03-09)
 
-### 4. Quem é Danilo
-- [x] Repensar os três marcos — Engenheiro / Do projeto ao mercado / Prêmio Salesforce
-- [x] Ajustar tamanho de fonte dos marcos (stat-value: 1.35rem)
-- [ ] Corrigir caixa de fundo da foto desalinhada no mobile
-
 ### 5. Serviços
-- [ ] Verificar negrito pontual
-- [ ] Verificar equilíbrio de tamanho de texto entre os três cards
+- [ ] Revisar opener do card 1 — candidato atual: "Para quem tem um produto bom mas ainda precisa afinar o discurso comercial." / candidato proposto: "Para quem sabe que o produto é bom mas o discurso comercial não está convertendo." — pendente aprovação
 
 ### 6. Evidências — PRIORIDADE ALTA
 - [ ] Formato: padronizar hierarquia dos 5 tipos de texto (número / legenda / título do case / contexto / resultado)
 - [ ] Conteúdo: revisar os três cases para alinhar com posicionamento atual do LinkedIn
-
-### 7. CTA Final
-- [ ] Aumentar tamanho do texto
-- [ ] Adicionar negrito em palavra-chave
 
 ### Outros
 - [ ] Definir link/formulário para o CTA "Agende uma conversa"

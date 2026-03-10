@@ -73,14 +73,14 @@
      ================================================================ */
   --fs-hero-sub:     1.775rem;   /* hero — subheadline              */
   --fs-intro:        1.5rem;     /* intro — parágrafo               */
-  --fs-card-prob:    1.25rem;     /* problema — texto dos cards      */
+  --fs-card-prob:    1.25rem;    /* problema — texto dos cards      */
   --fs-por-que:      1.25rem;    /* por que — parágrafo             */
   --fs-por-que-dest: 1.375rem;   /* por que — frase destaque        */
-  --fs-bio:          1rem;       /* sobre — bio                     */
+  --fs-bio:          1.15rem;    /* sobre — bio                     */
   --fs-servico:      1.125rem;   /* serviços — texto dos cards      */
   --fs-evidencia:    1rem;       /* evidências — resultado          */
   --fs-passos:       1.25rem;    /* como funciona — texto           */
-  --fs-cta-final:    1.25rem;    /* CTA final — parágrafo           */
+  --fs-cta-final:    1.375rem;   /* CTA final — parágrafo           */
 
   /* ================================================================
      ESPAÇAMENTOS EDITÁVEIS — seções e blocos de texto
@@ -657,6 +657,7 @@ section {
 .foto-wrapper {
   flex-shrink: 0;
   position: relative;
+  align-self: flex-start;
 }
 
 .foto-bg-shape {
@@ -702,14 +703,14 @@ section {
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--mustard);
   line-height: 1;
 }
 
 .stat-label {
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   color: #666;
   line-height: 1.5;
   margin-top: 0.25rem;
@@ -781,7 +782,7 @@ section {
 .evidencia-contexto {
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.0em;
   text-transform: uppercase;
   color: #888;
   margin-bottom: var(--sp-2);
@@ -945,7 +946,7 @@ section {
   line-height: 1.7;
   color: var(--licorice);
   max-width: 540px;
-  opacity: 0.82;
+  opacity: 1;
 }
 
 /* ============================================================
