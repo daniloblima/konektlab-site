@@ -972,6 +972,40 @@ footer p {
 }
 
 /* ============================================================
+   Nav da página principal — link para palestras
+   ============================================================ */
+
+.header-nav-main {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-main {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color var(--t-fast);
+}
+
+.nav-link-main:hover {
+  color: #fff;
+}
+
+#site-header.scrolled .nav-link-main {
+  color: var(--black-olive);
+}
+
+#site-header.scrolled .nav-link-main:hover {
+  color: var(--licorice);
+}
+
+@media (max-width: 479px) {
+  .header-nav-main {
+    display: none;
+  }
+}
+
+/* ============================================================
    Scroll Reveal — fade-in + translateY
    ============================================================ */
 

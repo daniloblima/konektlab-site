@@ -1,0 +1,250 @@
+/* ============================================================
+   palestras.css — Componentes específicos da página de palestras
+   Base: ../css/style.css (importado no HTML)
+   ============================================================ */
+
+/* ── Nav no header ────────────────────────────────────────── */
+
+.header-nav {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+}
+
+.nav-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color var(--t-fast);
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link--active {
+  color: var(--mustard);
+}
+
+#site-header.scrolled .nav-link {
+  color: var(--black-olive);
+}
+
+#site-header.scrolled .nav-link:hover {
+  color: var(--licorice);
+}
+
+#site-header.scrolled .nav-link--active {
+  color: var(--mustard-dark);
+}
+
+/* ── Para quem é ──────────────────────────────────────────── */
+
+.para-quem {
+  background-color: var(--platinum);
+}
+
+.para-quem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+
+.bloco-contratante {
+  background-color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  border-top: 3px solid var(--sky);
+  box-shadow: var(--shadow-card);
+}
+
+.bloco-contratante h3 {
+  color: var(--licorice);
+  margin-bottom: var(--sp-2);
+}
+
+.bloco-contratante p {
+  font-size: var(--fs-servico);
+  line-height: 1.72;
+  color: #4a4848;
+  margin-bottom: 0;
+}
+
+/* ── Temas ────────────────────────────────────────────────── */
+
+.temas {
+  background-color: var(--powder);
+}
+
+.card-tema {
+  background-color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  border-top: 3px solid var(--mustard);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.card-tema:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-tema h3 {
+  color: var(--licorice);
+  margin-bottom: var(--sp-2);
+}
+
+.tema-angulo {
+  font-size: var(--fs-servico);
+  line-height: 1.72;
+  color: #4a4848;
+  margin-bottom: var(--sp-3);
+}
+
+.tema-publico {
+  font-size: var(--text-sm);
+  color: #888;
+  line-height: 1.6;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--platinum);
+  margin-bottom: 0;
+}
+
+.temas-abertura {
+  margin-top: var(--sp-6);
+  font-size: var(--text-base);
+  color: #666;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Presença em palco ────────────────────────────────────── */
+
+.presenca {
+  background-color: var(--platinum);
+}
+
+.presenca-sub {
+  font-size: var(--text-base);
+  color: #666;
+  margin-bottom: var(--sp-6);
+}
+
+.foto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.foto-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--r-md);
+}
+
+.foto-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-base);
+}
+
+.foto-card:hover img {
+  transform: scale(1.03);
+}
+
+.foto-card figcaption {
+  font-size: var(--text-xs);
+  color: #666;
+  margin-top: var(--sp-1);
+  line-height: 1.4;
+}
+
+/* ── Mídia ────────────────────────────────────────────────── */
+
+.midia {
+  background-color: var(--powder);
+  text-align: center;
+}
+
+.midia h2 {
+  margin-bottom: var(--sp-2);
+}
+
+.midia-sub {
+  font-size: var(--text-base);
+  color: #666;
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto var(--sp-6);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Além da palestra ─────────────────────────────────────── */
+
+.alem {
+  background-color: var(--black-olive);
+  text-align: center;
+}
+
+.alem .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.alem h2 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.alem p {
+  font-size: var(--fs-servico);
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 560px;
+  line-height: 1.72;
+  margin-bottom: 0;
+}
+
+/* ── Responsividade ───────────────────────────────────────── */
+
+@media (min-width: 640px) {
+  .para-quem-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .foto-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .header-nav {
+    display: none;
+  }
+}
