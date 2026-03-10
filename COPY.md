@@ -89,21 +89,27 @@ Para quem quer **manter o ritmo de avanço** depois de construir a estratégia. 
 
 ### Segmentação e mapeamento de mercado
 
-**R$20M** em oportunidade identificada por ano
+**R$20M** por ano em oportunidades identificadas
 
-Multinacional do setor de energia sem segmentação real de clientes B2B. Investigação de campo com 20 entrevistas em profundidade. Metodologia adotada em toda a América do Sul.
+Multinacional do setor de energia sem processo de segmentação de clientes B2B. Investigação de campo com 20 entrevistas em profundidade e cruzamento de fontes para identificar motivações que não apareciam nos dados internos.
 
-### Evento setorial construído do zero
+Seis personas definidas. Metodologia adotada em toda a América do Sul.
 
-**100** participantes no evento de biogás
+### Oportunidade em projeto de P&D
 
-Setor com poucos contatos, sem estrutura prévia, prazo de três meses. Organizado do zero com estratégias fora do padrão on e offline. 40 reuniões de negócio. Multinacionais presentes. Feedback do mercado: "marcou o setor."
+**R$3M** em aditivo sobre o projeto original
 
-### Oportunidade comercial em projeto de P&D
+Projeto de P&D no setor solar com números originais indicando prejuízo. Análise do escopo identificou que uma mudança técnica necessária criava uma oportunidade comercial não prevista dentro do próprio projeto.
 
-**100%** do custo do projeto coberto pelo aditivo
+Aditivo contratual negociado. O projeto se pagou com a oportunidade identificada.
 
-Projeto de P&D no setor solar com números originais no prejuízo. Construção de oportunidade comercial dentro do projeto com aditivo contratual que pagou o projeto inteiro.
+### Mapeamento de risco em modelo de negócio
+
+**R$860k** em risco anual mapeado e quantificado
+
+Empresa do setor de energia com modelo de negócio estruturado e premissas implícitas sem validação. Mapeamento, quantificação do impacto de cada hipótese que sustentava a viabilidade da operação e atualização dos modelos.
+
+Riscos mapeados e mitigados antes de escalar a operação.
 
 ---
 
@@ -134,9 +140,9 @@ Se você se identificou em alguma das situações acima, uma conversa de **30 mi
 ### 5. Serviços
 - [ ] Revisar opener do card 1 — candidato atual: "Para quem tem um produto bom mas ainda precisa afinar o discurso comercial." / candidato proposto: "Para quem sabe que o produto é bom mas o discurso comercial não está convertendo." — pendente aprovação
 
-### 6. Evidências — PRIORIDADE ALTA
-- [ ] Formato: padronizar hierarquia dos 5 tipos de texto (número / legenda / título do case / contexto / resultado)
-- [ ] Conteúdo: revisar os três cases para alinhar com posicionamento atual do LinkedIn
+### 6. Evidências — CONCLUÍDO
+- [x] Formato: hierarquia dos 5 tipos de texto padronizada (número / legenda / título / situação 4 linhas / resultado 2 linhas)
+- [x] Conteúdo: três cases reescritos e alinhados com posicionamento atual
 
 ### Outros
 - [ ] Definir link/formulário para o CTA "Agende uma conversa"
