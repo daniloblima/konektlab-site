@@ -17,13 +17,22 @@
 
   <header id="site-header">
     <div class="header-inner">
-      <span class="logo">konekt<span class="logo-dot">.</span>lab</span>
-      <nav class="header-nav-main">
-        <a href="./palestras/" class="nav-link-main">Palestras</a>
+      <a href="./" class="logo">konekt<span class="logo-dot">.</span>lab</a>
+      <nav class="header-nav">
+        <a href="./" class="nav-link nav-link--active">Consultoria</a>
+        <a href="./palestras/" class="nav-link">Palestras</a>
       </nav>
       <a href="#" class="cta-btn cta-white cta-sm" id="cta-header" target="_blank" rel="noopener">
         Agende uma conversa
       </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="./" class="mobile-nav-link mobile-nav-link--active">Consultoria</a>
+      <a href="./palestras/" class="mobile-nav-link">Palestras</a>
+      <a href="#" class="cta-btn cta-dark" id="cta-mobile" target="_blank" rel="noopener">Agende uma conversa</a>
     </div>
   </header>
 
@@ -230,6 +239,15 @@
           </article>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ─── PALESTRANTE TEASER ──────────────────────────────────────── -->
+    <section id="palestras-teaser" class="palestras-teaser reveal">
+      <div class="container">
+        <h2>Danilo Lima também é palestrante</h2>
+        <p>Temas de negócios, inovação e comportamento, com linguagem acessível e conteúdo adaptado ao contexto do seu evento ou empresa.</p>
+        <a href="./palestras/" class="cta-btn cta-dark">Conheça as palestras</a>
       </div>
     </section>
 

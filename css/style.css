@@ -215,6 +215,7 @@ h3 {
 }
 
 .header-inner {
+  position: relative;
   max-width: var(--max-w-wide);
   margin: 0 auto;
   padding: var(--sp-3) var(--sp-4);
@@ -242,6 +243,108 @@ h3 {
 
 #site-header.scrolled .logo-dot {
   color: var(--mustard);
+}
+
+/* ── Nav — links centrais do header ────────────────────────── */
+
+.header-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+}
+
+.nav-link {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color var(--t-fast);
+  letter-spacing: -0.01em;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link--active {
+  color: var(--mustard);
+}
+
+#site-header.scrolled .nav-link {
+  color: var(--black-olive);
+}
+
+#site-header.scrolled .nav-link:hover {
+  color: var(--licorice);
+}
+
+#site-header.scrolled .nav-link--active {
+  color: var(--mustard-dark);
+}
+
+/* ── Hambúrguer — visível só em mobile ─────────────────────── */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  transition: transform var(--t-base), opacity var(--t-base);
+}
+
+#site-header.scrolled .nav-toggle span {
+  background-color: var(--licorice);
+}
+
+/* ── Menu mobile — dropdown abaixo do header ───────────────── */
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-6) var(--sp-4);
+  background-color: var(--licorice);
+}
+
+.mobile-menu.mobile-menu--open {
+  display: flex;
+}
+
+.mobile-nav-link {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: -0.01em;
+  transition: color var(--t-fast);
+}
+
+.mobile-nav-link:hover { color: #fff; }
+.mobile-nav-link--active { color: var(--mustard); }
+.mobile-menu .cta-btn { margin-top: var(--sp-2); }
+
+@media (max-width: 479px) {
+  .header-nav,
+  .header-inner > .cta-btn {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
 }
 
 /* ============================================================
@@ -814,6 +917,36 @@ section {
 }
 
 /* ============================================================
+   Seção Palestrante Teaser — Sky
+   ============================================================ */
+
+.palestras-teaser {
+  background-color: var(--sky);
+  text-align: center;
+}
+
+.palestras-teaser .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.palestras-teaser h2 {
+  color: var(--licorice);
+  margin-bottom: 0;
+}
+
+.palestras-teaser p {
+  font-size: var(--fs-servico);
+  color: var(--licorice);
+  max-width: 520px;
+  line-height: 1.72;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+
+/* ============================================================
    Seção Custo da Inação — Black Olive
    ============================================================ */
 
@@ -971,42 +1104,6 @@ footer p {
   margin-bottom: 0;
 }
 
-/* ============================================================
-   Nav da página principal — link para palestras
-   ============================================================ */
-
-.header-nav-main {
-  display: flex;
-  align-items: center;
-}
-
-#site-header .nav-link-main {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.72);
-  transition: color var(--t-fast);
-  line-height: 1;
-}
-
-#site-header .nav-link-main:hover {
-  color: #fff;
-}
-
-#site-header.scrolled .nav-link-main {
-  color: var(--black-olive);
-}
-
-#site-header.scrolled .nav-link-main:hover {
-  color: var(--licorice);
-}
-
-@media (max-width: 479px) {
-  .header-nav-main {
-    display: none;
-  }
-}
 
 /* ============================================================
    Scroll Reveal — fade-in + translateY

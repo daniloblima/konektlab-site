@@ -10,6 +10,7 @@ function initCTAs() {
     'cta-hero':      'hero',
     'cta-servicos':  'servicos',
     'cta-final-btn': 'cta-final',
+    'cta-mobile':    'mobile',
   };
 
   for (const [id, campaign] of Object.entries(ctaMap)) {
@@ -169,13 +170,35 @@ function initHeroStagger() {
   }
 }
 
+// ─── Mobile Menu ────────────────────────────────────────────────────────────────
+function initMobileMenu() {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('mobile-menu--open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#site-header')) {
+      menu.classList.remove('mobile-menu--open');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
+
 // ─── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initCTAs();
   initStickyHeader();
+  initMobileMenu();
   initHeroStagger();
   initScrollReveal();
   initCounters();
   initAnimatedBackground();
-  console.log('[konekt.lab] v3.2 initialized');
+  console.log('[konekt.lab] v3.3 initialized');
 });
