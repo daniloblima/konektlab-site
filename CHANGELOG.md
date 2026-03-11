@@ -5,6 +5,134 @@
 
 ---
 
+## [2026-03-11] — Navbar unificado, menu mobile e seção de palestras no index
+
+### OBJETIVO
+Equalizar o navbar das duas páginas, resolver problemas de layout no mobile e adicionar visibilidade às palestras no index principal.
+
+### O QUE FOI FEITO
+
+**Header layout**
+- Problema: grid `1fr auto 1fr` adicionado anteriormente causava CTA com tamanho variável e quebra no mobile (logo e CTA disputavam espaço com o nav oculto)
+- Solução: voltou para `flex + justify-content: space-between` com `.header-nav` absolutamente posicionado (`left: 50%; transform: translateX(-50%)`). Centralização matemática sem afetar os outros elementos.
+- Removido: `grid-template-columns` e `justify-self: end`
+
+**Unificação do navbar**
+- index.html agora usa as mesmas classes do navbar de palestras (`header-nav`, `nav-link`, `nav-link--active`)
+- index.html exibe "Consultoria" (ativo) + "Palestras"; palestras/index.html exibe "Consultoria" + "Palestras" (ativo)
+- Fonte: Nunito 700 16px — mesma família da logo, ligeiramente menor
+- Estilos do nav migrados para style.css (removido bloco duplicado do palestras.css)
+
+**Menu hambúrguer para mobile**
+- Visível apenas em ≤479px; nav e CTA do header ocultos nesse breakpoint
+- Dropdown com fundo licorice: links Consultoria, Palestras e CTA
+- JS: `initMobileMenu()` — toggle ao clicar no hambúrguer, fechar ao clicar fora
+- `cta-mobile` adicionado ao ctaMap com UTM `utm_campaign=mobile`
+
+**Seção "Danilo Lima também é palestrante"**
+- Inserida em index.html antes de `#custo` (Custo da Inação)
+- Fundo sky — contrasta com o black-olive que vem logo depois
+- CTA "Conheça as palestras" → `./palestras/`
+- Espelha a seção "Além da palestra" que já existia em palestras/index.html apontando para a consultoria
+
+### LIÇÕES APRENDIDAS
+- Diferença de tamanho visual entre as páginas era zoom do browser, não CSS. Ambas têm viewport meta idêntico.
+- Grid com colunas `1fr` e elementos de tamanho fixo (logo, botão) cria comportamento inesperado no mobile. Flexbox + posicionamento absoluto para elementos centralizados é mais previsível.
+
+---
+
+## [2026-03-10] — Página de Palestras: planejamento, copy e implementação inicial
+
+### OBJETIVO
+Criar a segunda página do site (palestras/index.html) com design system compartilhado, copy aprovado e assets organizados.
+
+### O QUE FOI FEITO
+
+**Etapa 1 — Levantamento de temas (conversa)**
+- 4 temas definidos e nomeados: "Pequenos passos e grandes conquistas", "O método antes do produto", "O que move quem compra", "A inquietude de quem avança"
+- Fio condutor de posicionamento: pragmático, sem teoria, participante sai sabendo o que fazer
+- Público da página: organizadores de eventos, RH corporativo, lideranças
+
+**Etapa 2 — Estrutura e copy (COPY-PALESTRAS.md)**
+- 8 seções aprovadas: Hero, Para quem é, Temas, Presença em palco, Mídia, Como contratar, Além da palestra, CTA final
+- Arquivo _docs/COPY-PALESTRAS.md com todo o conteúdo aprovado
+
+**Etapa 3 — Reorganização da pasta**
+- Criada pasta _docs/ para documentos de trabalho (gitignore)
+- Removida pasta img/ vazia
+- Documentos movidos: COPY.md, COPY-PALESTRAS.md, LEARNINGS.md, PLANO-PALESTRAS.md, LANDING-PAGE-MASTER.md, Handoff
+
+**Etapa 4 — Assets**
+- 6 fotos organizadas em palestras/images/ com nomenclatura padronizada
+- Fotos do Ibramerc otimizadas via sips: 1.5MB → 132KB e 2.4MB → 124KB
+- Formato quadrado 1:1 para uniformidade no grid
+
+**Etapa 5 — Implementação**
+- Criados: palestras/index.html e palestras/css/palestras.css
+- CSS compartilhado (style.css) reutilizado; palestras.css apenas overrides e componentes novos
+- Navbars atualizados com link cruzado entre as duas páginas
+- Bug corrigido: links absolutos (/palestras/) substituídos por relativos (./palestras/) para funcionar no GitHub Pages sem domínio customizado
+
+### PROBLEMAS IDENTIFICADOS (a resolver na próxima sessão)
+
+**1. Navbar da landing page principal (index.html)**
+- Problema: o link "Palestras" não está com cor branca quando o header está transparente (hero escuro). Na página de palestras funciona corretamente.
+- Causa provável: seletores `.nav-link-main` vs `.nav-link` — classes diferentes entre as duas páginas. A palestras.css tem `.nav-link` com cor explícita para ambos os estados; o style.css tem `.nav-link-main` que pode não estar sendo aplicado corretamente.
+- O que verificar: comparar seletores das duas páginas e unificar a lógica
+
+**2. Tamanho de fonte do nav**
+- "Consultoria" e "Palestras" estão com font-size var(--text-sm) = 14px, menor que o resto do header
+- Aumentar para var(--text-base) = 16px na próxima revisão visual geral
+
+**3. Hero da página de palestras idêntico ao da consultoria**
+- Usuário quer diferenciação visual entre as duas páginas
+- Sugestões a implementar (ver pendências abaixo)
+
+**4. Seções "Como contratar", "Além da palestra" e "CTA final" iguais às da página principal**
+- Estrutura e componentes reutilizados integralmente
+- Usuário quer variações visuais
+
+**5. Embed do YouTube**
+- Está funcionando mas o corte do vídeo fica estranho por ser em proporção diferente do original
+- Já é 16:9 (padding-bottom: 56.25%) — verificar se o problema é de outro tipo
+
+### PENDÊNCIAS — PRÓXIMA SESSÃO
+
+**A. Navbar**
+- Unificar comportamento de cor do link entre index.html e palestras/index.html
+- Aumentar tamanho da fonte dos links de navegação
+
+**B. Hero diferenciado para página de palestras**
+Sugestões a discutir:
+- Fundo em gradiente diferente (ex: usar --mustard como cor de destaque em vez de --sky)
+- Layout assimétrico: headline à esquerda + foto de evento à direita
+- Headline em duas cores diferente do padrão atual
+- Remover as hero-shapes e usar uma foto de fundo com overlay escuro
+
+**C. Seção "Como contratar" — diferenciada visualmente**
+Sugestões a discutir:
+- Cards lado a lado em vez de lista vertical com linha conectora
+- Numeração com estilo diferente (ex: números grandes em mustard no fundo)
+- Menos passos (3 está bem, mas o visual pode mudar)
+
+**D. Seção "Além da palestra" — diferenciada**
+- A seção atual (black-olive) é idêntica à "Custo da inação" da landing principal
+- Sugestões: usar platinum com borda mustard, ou powder com destaque lateral
+
+**E. CTA Final — diferenciado**
+- Atualmente usa exatamente o mesmo componente da landing principal (sky background)
+- Sugestão: mudar a cor de fundo ou adicionar um elemento visual diferente
+
+**F. Formulário de contato**
+- CTAs da página de palestras ainda apontam para href="#"
+- Criar formulário enxuto para substituir o extenso atual
+
+### LIÇÕES APRENDIDAS
+- Links de navegação em GitHub Pages sem domínio customizado devem ser sempre relativos (./palestras/, ../) nunca absolutos (/palestras/)
+- Ao reutilizar componentes entre páginas, definir logo de início quais seções podem ser idênticas e quais precisam de variação visual
+
+---
+
 ## [2026-02-27] — v3.2: polish visual, hierarquia e animação hero
 
 ### OBJETIVO
