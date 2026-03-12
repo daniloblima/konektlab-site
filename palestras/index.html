@@ -40,13 +40,8 @@
   <main>
 
     <!-- ─── HERO ─────────────────────────────────────────────────── -->
-    <section id="hero" class="hero">
-      <div class="hero-shape hero-shape--1"></div>
-      <div class="hero-shape hero-shape--2"></div>
-      <div class="hero-shape hero-shape--3"></div>
-      <div class="hero-shape hero-shape--4"></div>
-      <div class="hero-shape hero-shape--5"></div>
-      <div class="container">
+    <section id="hero" class="hero hero--split">
+      <div class="hero-split-texto">
         <h1>
           Conteúdo que a plateia aplica,
           <span class="h1-line2">não só ouve.</span>
@@ -55,6 +50,41 @@
         <a href="#" class="cta-btn cta-powder" id="cta-hero">
           Solicite uma proposta
         </a>
+      </div>
+      <div class="hero-split-foto hero-acordeon">
+        <div class="acordeon-panel acordeon-panel--active"
+             style="background-image: url('./images/evento-ibramerc-03.jpg')"
+             aria-label="Fórum Ibramerc">
+          <span class="acordeon-label">Fórum Ibramerc</span>
+        </div>
+        <div class="acordeon-panel"
+             style="background-image: url('./images/evento-ibramerc-04.jpg')"
+             aria-label="Fórum Ibramerc">
+          <span class="acordeon-label">Fórum Ibramerc</span>
+        </div>
+        <div class="acordeon-panel"
+             style="background-image: url('./images/evento-inova-niteroi-03.jpg')"
+             aria-label="Inova Niterói">
+          <span class="acordeon-label">Inova Niterói</span>
+        </div>
+        <div class="acordeon-panel"
+             style="background-image: url('./images/evento-energyshow-01.jpeg')"
+             aria-label="Energy Show">
+          <span class="acordeon-label">Energy Show</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROVA SOCIAL ──────────────────────────────────────────── -->
+    <section id="prova-social" class="prova-social">
+      <div class="container">
+        <p class="prova-social-label">Já apresentou em</p>
+        <ul class="prova-social-lista">
+          <li>Fórum Ibramerc</li>
+          <li>Inova Niterói — Sebrae Rio</li>
+          <li>Live University</li>
+          <li>Capacitações corporativas</li>
+        </ul>
       </div>
     </section>
 
@@ -171,33 +201,27 @@
     </section>
 
     <!-- ─── COMO CONTRATAR ────────────────────────────────────────── -->
-    <section id="como-contratar" class="como-funciona">
-      <div class="container">
+    <section id="como-contratar" class="como-contratar">
+      <div class="container container--wide">
         <h2>Como contratar</h2>
-        <div class="passos">
+        <div class="contratar-cards">
 
-          <div class="passo reveal">
-            <div class="passo-numero">1</div>
-            <div class="passo-content">
-              <h3>Conversa de alinhamento</h3>
-              <p>30 minutos para entender o contexto do evento ou da empresa, o perfil da plateia e o que faz sentido entregar.</p>
-            </div>
+          <div class="contratar-card reveal">
+            <span class="contratar-num">1</span>
+            <h3>Conversa de alinhamento</h3>
+            <p>30 minutos para entender o contexto do evento ou da empresa, o perfil da plateia e o que faz sentido entregar.</p>
           </div>
 
-          <div class="passo reveal" data-delay="150">
-            <div class="passo-numero">2</div>
-            <div class="passo-content">
-              <h3>Proposta com formato e data</h3>
-              <p>Escopo fechado, formato definido (palestra, workshop, painel) e prazo claro.</p>
-            </div>
+          <div class="contratar-card reveal" data-delay="120">
+            <span class="contratar-num">2</span>
+            <h3>Proposta com formato e data</h3>
+            <p>Escopo fechado, formato definido (palestra, workshop, painel) e prazo claro.</p>
           </div>
 
-          <div class="passo reveal" data-delay="300">
-            <div class="passo-numero">3</div>
-            <div class="passo-content">
-              <h3>Palestra adaptada ao seu público</h3>
-              <p>O conteúdo é personalizado para o contexto de quem vai ouvir. Nada genérico.</p>
-            </div>
+          <div class="contratar-card reveal" data-delay="240">
+            <span class="contratar-num">3</span>
+            <h3>Palestra adaptada ao seu público</h3>
+            <p>O conteúdo é personalizado para o contexto de quem vai ouvir. Nada genérico.</p>
           </div>
 
         </div>
@@ -208,18 +232,20 @@
     <!-- ─── ALÉM DA PALESTRA ──────────────────────────────────────── -->
     <section id="alem" class="alem reveal">
       <div class="container">
-        <h2>Além da palestra</h2>
-        <p>Parte do público que participa de uma palestra tem um desafio maior pela frente: transformar tecnologia ou produto bom em tração comercial. Para esse trabalho, o konekt.lab oferece consultoria individual com escopo fechado e execução junto.</p>
-        <a href="../" class="cta-btn cta-dark">Conheça o konekt.lab</a>
+        <div class="alem-inner">
+          <h2>Além da palestra</h2>
+          <p>Parte do público que participa de uma palestra tem um desafio maior pela frente: transformar tecnologia ou produto bom em tração comercial. Para esse trabalho, o konekt.lab oferece consultoria individual com escopo fechado e execução junto.</p>
+          <a href="../" class="cta-btn cta-dark">Conheça o konekt.lab</a>
+        </div>
       </div>
     </section>
 
     <!-- ─── CTA FINAL ─────────────────────────────────────────────── -->
-    <section id="cta-final" class="cta-final reveal">
+    <section id="cta-final" class="cta-final cta-final--dark reveal">
       <div class="container">
         <h2>Vamos conversar</h2>
         <p>Se você está buscando um palestrante para o seu evento ou um tema para levar à sua equipe, uma conversa de 30 minutos é suficiente para entender se faz sentido trabalharmos juntos.</p>
-        <a href="#" class="cta-btn cta-dark" id="cta-final-btn">
+        <a href="#" class="cta-btn cta-powder" id="cta-final-btn">
           Solicite uma proposta
         </a>
       </div>

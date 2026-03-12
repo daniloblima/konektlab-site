@@ -170,6 +170,28 @@ function initHeroStagger() {
   }
 }
 
+// ─── Acordeão de Imagens ────────────────────────────────────────────────────────
+// mouseenter no panel → ativa, remove dos demais.
+// mouseleave no container → volta ao primeiro.
+function initAcordeon() {
+  const acordeon = document.querySelector('.hero-acordeon');
+  if (!acordeon) return;
+
+  const panels = acordeon.querySelectorAll('.acordeon-panel');
+
+  panels.forEach((panel) => {
+    panel.addEventListener('mouseenter', () => {
+      panels.forEach((p) => p.classList.remove('acordeon-panel--active'));
+      panel.classList.add('acordeon-panel--active');
+    });
+  });
+
+  acordeon.addEventListener('mouseleave', () => {
+    panels.forEach((p) => p.classList.remove('acordeon-panel--active'));
+    panels[0].classList.add('acordeon-panel--active');
+  });
+}
+
 // ─── Mobile Menu ────────────────────────────────────────────────────────────────
 function initMobileMenu() {
   const toggle = document.querySelector('.nav-toggle');
@@ -200,5 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initCounters();
   initAnimatedBackground();
-  console.log('[konekt.lab] v3.3 initialized');
+  initAcordeon();
+  console.log('[konekt.lab] v3.4 initialized');
 });

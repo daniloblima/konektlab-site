@@ -428,6 +428,16 @@ h3 {
   color: var(--licorice);
   box-shadow: 0 4px 16px rgba(232, 175, 88, 0.3);
 }
+/* CTA dentro do mobile-menu: mantém branco mesmo no estado scrolled */
+#site-header.scrolled .mobile-menu .cta-btn {
+  background-color: #fff;
+  color: var(--licorice);
+  border-color: transparent;
+}
+#site-header.scrolled .mobile-menu .cta-btn:hover {
+  background-color: var(--mustard);
+  color: var(--licorice);
+}
 
 /* Tamanho menor para header */
 .cta-sm {
