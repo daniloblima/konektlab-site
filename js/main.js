@@ -4,7 +4,11 @@
 const CTA_BASE = 'https://calendar.app.google/y9kQeTfRk1hApJw78';
 
 // ─── CTAs com UTM ──────────────────────────────────────────────────────────────
+// Na página de palestras, os CTAs apontam para #cta-final (formulário de contato).
+// Nas demais páginas, apontam para o Google Calendar com UTM.
 function initCTAs() {
+  if (document.body.classList.contains('palestras-page')) return;
+
   const ctaMap = {
     'cta-header':    'header',
     'cta-hero':      'hero',
@@ -192,6 +196,26 @@ function initAcordeon() {
   });
 }
 
+// ─── Hover — Para quem é (palestras) ────────────────────────────────────────────
+// mouseenter em cada .bloco-contratante → card-active, remove dos demais.
+// mouseleave no grid → remove card-active de todos.
+function initParaQuemHover() {
+  const grid = document.querySelector('.para-quem-grid');
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll('.bloco-contratante');
+  cards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach((c) => c.classList.remove('card-active'));
+      card.classList.add('card-active');
+    });
+  });
+
+  grid.addEventListener('mouseleave', () => {
+    cards.forEach((c) => c.classList.remove('card-active'));
+  });
+}
+
 // ─── Mobile Menu ────────────────────────────────────────────────────────────────
 function initMobileMenu() {
   const toggle = document.querySelector('.nav-toggle');
@@ -223,5 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initAnimatedBackground();
   initAcordeon();
-  console.log('[konekt.lab] v3.4 initialized');
+  initParaQuemHover();
+  console.log('[konekt.lab] v3.5 initialized');
 });

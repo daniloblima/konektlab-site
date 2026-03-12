@@ -14,16 +14,16 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="./css/palestras.css">
 </head>
-<body>
+<body class="palestras-page">
 
-  <header id="site-header">
+  <header id="site-header" class="header--light">
     <div class="header-inner">
       <a href="../" class="logo">konekt<span class="logo-dot">.</span>lab</a>
       <nav class="header-nav">
         <a href="../" class="nav-link">Consultoria</a>
         <a href="./" class="nav-link nav-link--active">Palestras</a>
       </nav>
-      <a href="#" class="cta-btn cta-white cta-sm" id="cta-header">
+      <a href="#cta-final" class="cta-btn cta-white cta-sm" id="cta-header">
         Solicite uma proposta
       </a>
       <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
@@ -33,7 +33,7 @@
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
       <a href="../" class="mobile-nav-link">Consultoria</a>
       <a href="./" class="mobile-nav-link mobile-nav-link--active">Palestras</a>
-      <a href="#" class="cta-btn cta-white" id="cta-mobile">Solicite uma proposta</a>
+      <a href="#cta-final" class="cta-btn cta-white" id="cta-mobile">Solicite uma proposta</a>
     </div>
   </header>
 
@@ -47,7 +47,7 @@
           <span class="h1-line2">não só ouve.</span>
         </h1>
         <p class="subheadline">Temas de negócios, inovação e comportamento, com linguagem acessível e conteúdo adaptado ao contexto do seu evento ou empresa.</p>
-        <a href="#" class="cta-btn cta-powder" id="cta-hero">
+        <a href="#cta-final" class="cta-btn cta-dark" id="cta-hero">
           Solicite uma proposta
         </a>
       </div>
@@ -75,18 +75,6 @@
       </div>
     </section>
 
-    <!-- ─── PROVA SOCIAL ──────────────────────────────────────────── -->
-    <section id="prova-social" class="prova-social">
-      <div class="container">
-        <p class="prova-social-label">Já apresentou em</p>
-        <ul class="prova-social-lista">
-          <li>Fórum Ibramerc</li>
-          <li>Inova Niterói — Sebrae Rio</li>
-          <li>Live University</li>
-          <li>Capacitações corporativas</li>
-        </ul>
-      </div>
-    </section>
 
     <!-- ─── PARA QUEM É ───────────────────────────────────────────── -->
     <section id="para-quem" class="para-quem">
@@ -117,29 +105,36 @@
           <article class="card-tema reveal">
             <h3>Pequenos passos e grandes conquistas</h3>
             <p class="tema-angulo">Como pequenos ajustes na experiência do cliente amplificam a percepção de valor e geram crescimento sem grandes investimentos.</p>
+            <span class="tema-publico-label">Para quem</span>
             <p class="tema-publico">Para empresas de qualquer setor que atendem clientes e querem melhorar resultados sem reformular tudo.</p>
           </article>
 
           <article class="card-tema reveal" data-delay="100">
             <h3>O método antes do produto</h3>
             <p class="tema-angulo">Como estruturar o processo de inovação do zero, da identificação do problema real até o pitch, sem depender de sorte ou recurso extra.</p>
+            <span class="tema-publico-label">Para quem</span>
             <p class="tema-publico">Para equipes técnicas, pesquisadores e lideranças que precisam transformar conhecimento em produto ou projeto viável.</p>
           </article>
 
           <article class="card-tema reveal" data-delay="150">
             <h3>O que move quem compra</h3>
             <p class="tema-angulo">Como princípios da ciência comportamental explicam por que boas soluções não vendem e o que fazer para mudar isso.</p>
+            <span class="tema-publico-label">Para quem</span>
             <p class="tema-publico">Para times comerciais, de marketing e lideranças que precisam entender a lógica de decisão do cliente.</p>
           </article>
 
           <article class="card-tema reveal" data-delay="200">
             <h3>A inquietude de quem avança</h3>
             <p class="tema-angulo">Por que o conforto é o maior risco para líderes e empresas, e como cultivar a mentalidade de quem identifica e age sobre oportunidades antes que elas fechem.</p>
+            <span class="tema-publico-label">Para quem</span>
             <p class="tema-publico">Para lideranças corporativas, times de inovação e eventos que trabalham com cultura e desenvolvimento.</p>
           </article>
 
         </div>
-        <p class="temas-abertura reveal">Outros temas relacionados a negócios, inovação e comportamento podem ser desenvolvidos sob medida para o seu evento. Entre em contato para conversar sobre o que faz sentido para o seu público.</p>
+        <div class="temas-nota reveal">
+          <p>Nenhum desses temas se encaixa no seu contexto? Entre em contato para conversar sobre o que faz sentido para o seu público.</p>
+          <a href="#cta-final" class="temas-nota-link">Falar sobre o evento</a>
+        </div>
       </div>
     </section>
 
@@ -152,32 +147,32 @@
 
           <figure class="foto-card reveal">
             <img src="./images/evento-ibramerc-01.jpg" alt="Danilo Lima no Fórum Ibramerc" loading="lazy">
-            <figcaption>Fórum Ibramerc — Inteligência de mercado</figcaption>
+            <figcaption>Fórum Ibramerc — palestra sobre inteligência de mercado para profissionais do setor de bebidas e alimentos</figcaption>
           </figure>
 
           <figure class="foto-card reveal" data-delay="100">
             <img src="./images/evento-ibramerc-02.jpg" alt="Danilo Lima no Fórum Ibramerc" loading="lazy">
-            <figcaption>Fórum Ibramerc — Inteligência de mercado</figcaption>
+            <figcaption>Fórum Ibramerc — mesa de debates com líderes do setor</figcaption>
           </figure>
 
           <figure class="foto-card reveal" data-delay="150">
             <img src="./images/evento-inova-niteroi-01.jpg" alt="Danilo Lima no Inova Niterói" loading="lazy">
-            <figcaption>Inova Niterói — Inovação e empreendedorismo, Sebrae Rio</figcaption>
+            <figcaption>Inova Niterói, Sebrae Rio — palestra sobre inovação e empreendedorismo para startups e pequenas empresas</figcaption>
           </figure>
 
           <figure class="foto-card reveal" data-delay="200">
             <img src="./images/evento-inova-niteroi-02.jpg" alt="Danilo Lima no Inova Niterói" loading="lazy">
-            <figcaption>Inova Niterói — Inovação e empreendedorismo, Sebrae Rio</figcaption>
+            <figcaption>Inova Niterói, Sebrae Rio — interação com o público durante sessão de perguntas</figcaption>
           </figure>
 
           <figure class="foto-card reveal" data-delay="250">
             <img src="./images/evento-capacitacao-01.jpg" alt="Capacitação de inovação e negócios" loading="lazy">
-            <figcaption>Capacitação de inovação e negócios</figcaption>
+            <figcaption>Capacitação corporativa sobre inovação e mentalidade de negócios</figcaption>
           </figure>
 
           <figure class="foto-card reveal" data-delay="300">
             <img src="./images/evento-energia-01.jpg" alt="Palestra sobre energias renováveis" loading="lazy">
-            <figcaption>Palestras sobre energias renováveis</figcaption>
+            <figcaption>Palestra sobre energias renováveis e transição energética</figcaption>
           </figure>
 
         </div>
@@ -225,18 +220,19 @@
           </div>
 
         </div>
-        <p class="temas-abertura reveal">Temas além dos listados acima podem ser desenvolvidos sob medida. Se tiver um tema em mente, mencione na conversa de alinhamento.</p>
+        <div class="contratar-nota reveal">
+          <p>O processo acima é o padrão, mas pode ser adaptado ao contexto do seu evento. Se tiver dúvidas sobre formato ou logística, mencione na primeira conversa.</p>
+          <a href="#cta-final" class="temas-nota-link">Solicite uma proposta</a>
+        </div>
       </div>
     </section>
 
     <!-- ─── ALÉM DA PALESTRA ──────────────────────────────────────── -->
     <section id="alem" class="alem reveal">
       <div class="container">
-        <div class="alem-inner">
-          <h2>Além da palestra</h2>
-          <p>Parte do público que participa de uma palestra tem um desafio maior pela frente: transformar tecnologia ou produto bom em tração comercial. Para esse trabalho, o konekt.lab oferece consultoria individual com escopo fechado e execução junto.</p>
-          <a href="../" class="cta-btn cta-dark">Conheça o konekt.lab</a>
-        </div>
+        <h2>Além da palestra</h2>
+        <p>Parte do público que participa de uma palestra tem um desafio maior pela frente: transformar tecnologia ou produto bom em tração comercial. Para esse trabalho, o konekt.lab oferece consultoria individual com escopo fechado e execução junto.</p>
+        <a href="../" class="cta-btn cta-dark">Conheça o konekt.lab</a>
       </div>
     </section>
 
@@ -245,7 +241,7 @@
       <div class="container">
         <h2>Vamos conversar</h2>
         <p>Se você está buscando um palestrante para o seu evento ou um tema para levar à sua equipe, uma conversa de 30 minutos é suficiente para entender se faz sentido trabalharmos juntos.</p>
-        <a href="#" class="cta-btn cta-powder" id="cta-final-btn">
+        <a href="#cta-final" class="cta-btn cta-powder" id="cta-final-btn">
           Solicite uma proposta
         </a>
       </div>

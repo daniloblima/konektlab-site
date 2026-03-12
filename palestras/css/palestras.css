@@ -3,6 +3,50 @@
    Base: ../css/style.css (importado no HTML)
    ============================================================ */
 
+/* ── Header modo claro (palestras) ───────────────────────── */
+/* O hero tem fundo claro — logo e links precisam ser escuros antes do scroll */
+
+.header--light:not(.scrolled) .logo {
+  color: var(--licorice);
+}
+
+.header--light:not(.scrolled) .nav-link {
+  color: rgba(27, 18, 18, 0.6);
+}
+
+.header--light:not(.scrolled) .nav-link:hover {
+  color: var(--licorice);
+}
+
+.header--light:not(.scrolled) .nav-link--active {
+  color: var(--mustard-dark);
+}
+
+.header--light:not(.scrolled) .nav-toggle span {
+  background-color: var(--licorice);
+}
+
+.header--light:not(.scrolled) .cta-white {
+  background-color: var(--licorice);
+  color: var(--powder);
+}
+
+/* ── Header scrolled — licorice (sobrescreve powder do style.css) ─── */
+
+#site-header.scrolled {
+  background-color: var(--licorice);
+}
+#site-header.scrolled .logo { color: #fff; }
+#site-header.scrolled .logo-dot { color: var(--mustard); }
+#site-header.scrolled .nav-link { color: rgba(255,255,255,0.72); }
+#site-header.scrolled .nav-link:hover { color: #fff; }
+#site-header.scrolled .nav-link--active { color: var(--mustard); }
+#site-header.scrolled .nav-toggle span { background-color: #fff; }
+#site-header.scrolled .cta-white {
+  background-color: var(--powder);
+  color: var(--licorice);
+}
+
 /* ── Hero Split ───────────────────────────────────────────── */
 
 .hero--split {
@@ -10,7 +54,9 @@
   align-items: stretch;
   height: 100vh;
   overflow: hidden;
-  /* mantém display: flex herdado de .hero — flex-direction: row por padrão */
+  /* fundo claro com glow mustard — diferencia da consultoria (licorice + sky) */
+  background: radial-gradient(ellipse 70% 45% at 50% -5%, rgba(232, 175, 88, 0.22), transparent 70%),
+              var(--powder);
 }
 
 .hero-split-texto {
@@ -30,11 +76,17 @@
 
 .hero--split h1 {
   max-width: 520px;
+  color: var(--licorice);
+}
+
+.hero--split .h1-line2 {
+  color: var(--mustard-dark);
 }
 
 .hero--split .subheadline {
   max-width: 460px;
   margin-top: var(--sp-4);
+  color: var(--black-olive);
 }
 
 .hero--split .cta-btn {
@@ -164,6 +216,13 @@
   padding: var(--sp-6);
   border-top: 3px solid var(--sky);
   box-shadow: var(--shadow-card);
+  transition: transform var(--t-base), box-shadow var(--t-base), background-color 0.4s ease;
+}
+
+.bloco-contratante.card-active {
+  background-color: rgba(232, 175, 88, 0.08);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .bloco-contratante h3 {
@@ -210,24 +269,57 @@
   margin-bottom: var(--sp-3);
 }
 
-.tema-publico {
-  font-size: var(--text-sm);
-  color: #888;
-  line-height: 1.6;
+.tema-publico-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mustard-dark);
+  margin-top: var(--sp-3);
+  margin-bottom: var(--sp-1);
   padding-top: var(--sp-2);
   border-top: 1px solid var(--platinum);
+}
+
+.tema-publico {
+  font-size: var(--text-base);
+  color: var(--black-olive);
+  line-height: 1.6;
   margin-bottom: 0;
 }
 
-.temas-abertura {
+.temas-nota,
+.contratar-nota {
   margin-top: var(--sp-6);
+  background-color: #fff;
+  border: 1px solid var(--platinum);
+  border-left: 4px solid var(--mustard);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.temas-nota p,
+.contratar-nota p {
+  font-size: var(--fs-servico);
+  color: var(--black-olive);
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.temas-nota-link {
   font-size: var(--text-base);
-  color: #666;
-  line-height: 1.7;
-  text-align: center;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: 500;
+  color: var(--mustard-dark);
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ── Presença em palco ────────────────────────────────────── */
@@ -267,10 +359,10 @@
 }
 
 .foto-card figcaption {
-  font-size: var(--text-xs);
-  color: #666;
-  margin-top: var(--sp-1);
-  line-height: 1.4;
+  font-size: var(--text-sm);
+  color: var(--black-olive);
+  margin-top: var(--sp-2);
+  line-height: 1.5;
 }
 
 /* ── Mídia ────────────────────────────────────────────────── */
@@ -294,8 +386,9 @@
 
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  padding-bottom: 0;
   overflow: hidden;
   border-radius: var(--r-lg);
   max-width: 760px;
@@ -355,24 +448,18 @@
   margin-bottom: 0;
 }
 
-/* ── Além da palestra — platinum com accent mustard ──────── */
+/* ── Além da palestra ─────────────────────────────────────── */
 
 .alem {
-  background-color: var(--platinum);
-  text-align: left;
+  background-color: var(--sky);
+  text-align: center;
 }
 
 .alem .container {
-  display: block;
-}
-
-.alem-inner {
-  border-left: 4px solid var(--mustard);
-  padding-left: var(--sp-6);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--sp-4);
-  max-width: 640px;
 }
 
 .alem h2 {
@@ -382,8 +469,10 @@
 
 .alem p {
   font-size: var(--fs-servico);
-  color: var(--black-olive);
+  color: var(--licorice);
+  max-width: 520px;
   line-height: 1.72;
+  opacity: 0.85;
   margin-bottom: 0;
 }
 
@@ -399,6 +488,16 @@
 
 .cta-final--dark p {
   color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+
+.palestras-page footer {
+  background-color: var(--black-olive);
+}
+
+.palestras-page footer p {
+  color: rgba(255,255,255,0.5);
 }
 
 /* ── Responsividade ───────────────────────────────────────── */
