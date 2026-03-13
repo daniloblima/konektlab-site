@@ -5,6 +5,100 @@
 
 ---
 
+## [2026-03-13] — Ajustes mobile, LinkedIn, CTAs unificados e acordeão polido
+
+### OBJETIVO
+Finalizar a página de palestras para publicação com domínio próprio (konektlab.com via GoDaddy): corrigir mobile, adicionar LinkedIn nas duas páginas, unificar comportamento de CTAs e polir o acordeão.
+
+### O QUE FOI FEITO
+
+**Mobile — menu e hero**
+- CTA do menu mobile ficava invisível na página de palestras: `.header--light` aplicava fundo licorice ao `.cta-white`, idêntico ao fundo do dropdown. Solução: regra específica `header--light .mobile-menu .cta-btn` com fundo powder.
+- Hero mobile sem imagem: substituído `<img>` simples por `<figure class="hero-mobile-foto">` com `<figcaption>`. Foto trocada de `ibramerc-03` para `ibramerc-05`. CSS: `min-height: 0`, `padding-bottom: var(--sp-8)` e `align-self: center` no CTA.
+
+**Blocos .temas-nota e .contratar-nota no mobile**
+- `display: flex; justify-content: space-between` quebrava no mobile estreito. Solução: `@media (max-width: 639px)` com `flex-direction: column; align-items: flex-start`.
+
+**Footer da página de palestras**
+- Fundo `var(--black-olive)` era escuro demais logo após o CTA final (licorice). Trocado para `var(--powder)` com texto `var(--black-olive)` opacity 0.6.
+
+**LinkedIn — ambas as páginas**
+- Bloco `.linkedin-teaser` adicionado no CTA final: inline-flex com ícone SVG e link para `linkedin.com/in/daniloblima`.
+- Footer de ambas as páginas: adicionado `<p><a class="footer-linkedin">linkedin.com/in/daniloblima</a></p>`.
+- Bug: `.linkedin-teaser` ficava invisível na página de palestras (herdava cor licorice do body sobre fundo licorice). Solução: `.cta-final--dark { color: #fff }` no palestras.css.
+
+**CTAs unificados**
+- `index.html`: todos os CTAs de navegação (`#cta-header`, `#cta-mobile`, `#cta-hero`, `#cta-servicos`) apontam para `#cta-final` (âncora interna), sem `target="_blank"`.
+- `initCTAs()` simplificado para setar apenas `#cta-final-btn` com Google Calendar URL + UTM. A lógica de sobrescrita de todos os CTAs foi removida.
+
+**Acordeão — label dos painéis colapsados**
+- Problema original: label com `bottom: 20px; translateX(-50%); rotate(90deg)` — final da palavra ficava no meio do painel, não na borda inferior.
+- Solução: `right: calc(50% + 8px); bottom: var(--sp-3); transform-origin: right bottom; rotate(90deg)`. O 8px compensa metade da altura do elemento para centralizar o texto no strip de 54px; o `bottom: var(--sp-3)` dá respiro sem colar o final na borda.
+- Estado ativo (`--active`): `right: auto; left: 50%; bottom: 20px; transform-origin: center; translateX(-50%) rotate(0deg)`.
+
+**Seções adjacentes com mesmo fundo**
+- `.midia` e `.como-contratar` ambas usavam `var(--powder)`. Trocado `.como-contratar` para `var(--platinum)` para alternar a sequência de fundos.
+
+**Publicação com domínio customizado**
+- DNS GoDaddy configurado e sincronizado com GitHub Pages. Site acessível em konektlab.com.
+
+### LIÇÕES APRENDIDAS
+- `color: currentColor` herda do body, não do container imediato — em seções com fundo escuro, precisa de `color: #fff` explícito no container para que links e ícones fiquem visíveis.
+- `transform-origin: right bottom` + `right: calc(50% + height/2)` é a fórmula correta para ancorar texto rotacionado 90° pelo seu final e centralizá-lo horizontalmente num strip de largura fixa. O `height/2` compensa o deslocamento geométrico da âncora.
+- Ao simplificar `initCTAs()`, garantir que a lógica antiga de sobrescrita não afete a nova âncora interna.
+
+---
+
+## [2026-03-12] — Redesign visual da página de palestras e implementação de 9 itens
+
+### OBJETIVO
+Dois objetivos: (1) redesign do hero split com acordeão de imagens, (2) revisão visual completa da página — 9 itens planejados e implementados em passagem única.
+
+### O QUE FOI FEITO
+
+**Hero split com acordeão de imagens**
+- Substituiu imagem única por acordeão de 4 painéis, hover expande com transição CSS (`flex` + JS `mouseenter`).
+- 4 fotos: `ibramerc-03`, `ibramerc-04`, `inova-niteroi-03`, `energyshow-01`. Labels rotacionados 90° nos colapsados, horizontais no ativo.
+- `initAcordeon()` adicionado em `main.js`.
+
+**Hero — fundo claro**
+- Fundo mudado de licorice para powder. Header em modo `--header-light` (logo licorice, links escuros).
+- Header scrolled sobrescrito em palestras.css para ficar licorice (não powder como no index).
+
+**Prova social removida**
+- `<section id="prova-social">` retirada — conteúdo coberto pela seção `#presenca`.
+
+**Para quem é — hover nos cards**
+- `.bloco-contratante` recebe `card-active` (mustard tint + translateY) via `initParaQuemHover()`.
+
+**Temas — hierarquia visual**
+- `<span class="tema-publico-label">Para quem</span>` em uppercase mustard-dark adicionado antes de `.tema-publico` em cada card.
+
+**Temas / Como contratar — parágrafo final destacado**
+- `<p class="temas-abertura">` substituído por `.temas-nota` / `.contratar-nota`: flex com borda esquerda mustard, texto atualizado, link âncora para `#cta-final`.
+
+**Presença em palco — figcaptions descritivas**
+- Fonte aumentada para `--text-sm`. Legendas expandidas com contexto de cada evento.
+
+**Vídeo — proporção correta**
+- `.video-wrapper` migrado de `padding-bottom: 56.25%` para `aspect-ratio: 16/9`.
+
+**Footer diferenciado**
+- Primeiro: fundo `var(--black-olive)` (escuro, para separar do CTA). Depois revisado para `var(--powder)` (ver sessão 13/03).
+
+**Formulário de contato**
+- Google Forms com 7 campos (Nome, E-mail obrigatório, Evento, Público, Tema, Como conheceu, Algo mais).
+- `#cta-final-btn` aponta para o Forms com `target="_blank"`. `initCTAs()` retorna cedo em `palestras-page`.
+
+**JS — v3.5**
+- `initParaQuemHover()` adicionado. `initAcordeon()` adicionado (sessão 12/03 manhã).
+
+### LIÇÕES APRENDIDAS
+- Dimensões ideais para fotos do acordeão: 800×1200px, proporção 2:3 — sujeito centralizado horizontalmente para o painel colapsado mostrar o rosto.
+- `aspect-ratio` é superior a `padding-bottom: 56.25%` para embed de vídeo — mais legível e funciona bem em todos os browsers modernos.
+
+---
+
 ## [2026-03-11] — Navbar unificado, menu mobile e seção de palestras no index
 
 ### OBJETIVO
