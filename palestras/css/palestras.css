@@ -185,9 +185,10 @@
 
 .acordeon-label {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) rotate(90deg);
+  bottom: var(--sp-3);
+  right: calc(50% + 8px); /* 8px ≈ metade da altura da linha, centra o texto no strip */
+  transform-origin: right bottom; /* ancora na extremidade final do texto */
+  transform: rotate(90deg);
   color: #fff;
   font-family: 'Albert Sans', sans-serif;
   font-size: 13px;
@@ -199,6 +200,10 @@
 }
 
 .acordeon-panel--active .acordeon-label {
+  right: auto;
+  left: 50%;
+  bottom: 20px;
+  transform-origin: center;
   transform: translateX(-50%) rotate(0deg);
   font-size: 15px;
 }
