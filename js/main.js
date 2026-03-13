@@ -4,24 +4,15 @@
 const CTA_BASE = 'https://calendar.app.google/y9kQeTfRk1hApJw78';
 
 // ─── CTAs com UTM ──────────────────────────────────────────────────────────────
-// Na página de palestras, os CTAs apontam para #cta-final (formulário de contato).
-// Nas demais páginas, apontam para o Google Calendar com UTM.
+// Todos os CTAs de ambas as páginas apontam para #cta-final (scroll interno).
+// Apenas #cta-final-btn aponta para o link externo (Google Calendar ou Forms).
+// Na página de palestras, #cta-final-btn já tem href fixo no HTML — sem UTM.
 function initCTAs() {
   if (document.body.classList.contains('palestras-page')) return;
 
-  const ctaMap = {
-    'cta-header':    'header',
-    'cta-hero':      'hero',
-    'cta-servicos':  'servicos',
-    'cta-final-btn': 'cta-final',
-    'cta-mobile':    'mobile',
-  };
-
-  for (const [id, campaign] of Object.entries(ctaMap)) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.href = `${CTA_BASE}?utm_source=site&utm_medium=cta&utm_campaign=${campaign}`;
-    }
+  const el = document.getElementById('cta-final-btn');
+  if (el) {
+    el.href = `${CTA_BASE}?utm_source=site&utm_medium=cta&utm_campaign=cta-final`;
   }
 }
 
