@@ -1064,6 +1064,10 @@ section {
 }
 
 /* ── CTA Final — bloco LinkedIn secundário ── */
+/* Parâmetros ajustáveis:
+   - Fonte do texto  → font-size em .linkedin-teaser
+   - Tamanho do bloco → padding em .linkedin-teaser
+   - Tamanho do ícone → width/height em .linkedin-icon-link svg  */
 
 .linkedin-teaser {
   display: inline-flex;
@@ -1072,14 +1076,14 @@ section {
   margin-top: var(--sp-2);
   border: 1px solid currentColor;
   border-radius: var(--r-md);
-  padding: 0.625rem var(--sp-2);
-  font-size: var(--text-xs);
-  opacity: 0.55;
+  padding: 0.75rem var(--sp-3);   /* ← tamanho do bloco */
+  font-size: var(--text-sm);      /* ← tamanho da fonte */
+  opacity: 0.6;
   transition: opacity var(--t-fast);
 }
 
 .linkedin-teaser:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .linkedin-icon-link {
@@ -1087,6 +1091,11 @@ section {
   align-items: center;
   color: inherit;
   flex-shrink: 0;
+}
+
+.linkedin-icon-link svg {
+  width: 20px;   /* ← tamanho do ícone */
+  height: 20px;
 }
 
 /* ============================================================

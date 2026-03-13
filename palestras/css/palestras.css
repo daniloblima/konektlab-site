@@ -531,6 +531,7 @@
 
 .cta-final--dark {
   background-color: var(--licorice);
+  color: #fff;
 }
 
 .cta-final--dark h2 {
