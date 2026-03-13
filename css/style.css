@@ -948,7 +948,7 @@ section {
 }
 
 .palestras-teaser p {
-  font-size: var(--fs-servico);
+  font-size: 1.25rem;
   color: var(--licorice);
   max-width: 520px;
   line-height: 1.72;
@@ -1063,23 +1063,30 @@ section {
   margin-bottom: 0;
 }
 
-/* ── CTA Final — link LinkedIn secundário ── */
+/* ── CTA Final — bloco LinkedIn secundário ── */
 
-.cta-linkedin-link {
-  font-size: var(--text-sm);
-  margin-bottom: 0;
-}
-
-.cta-linkedin-link a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  opacity: 0.72;
+.linkedin-teaser {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  border: 1px solid currentColor;
+  border-radius: var(--r-md);
+  padding: 0.625rem var(--sp-2);
+  font-size: var(--text-xs);
+  opacity: 0.55;
   transition: opacity var(--t-fast);
 }
 
-.cta-linkedin-link a:hover {
-  opacity: 1;
+.linkedin-teaser:hover {
+  opacity: 0.85;
+}
+
+.linkedin-icon-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -1249,6 +1256,10 @@ footer p {
   .sobre-stats {
     flex-direction: column;
     gap: var(--sp-3);
+  }
+
+  .foto-wrapper {
+    align-self: center;
   }
 
   .por-que::before {
