@@ -1063,6 +1063,25 @@ section {
   margin-bottom: 0;
 }
 
+/* ── CTA Final — link LinkedIn secundário ── */
+
+.cta-linkedin-link {
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+.cta-linkedin-link a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.72;
+  transition: opacity var(--t-fast);
+}
+
+.cta-linkedin-link a:hover {
+  opacity: 1;
+}
+
 /* ============================================================
    CTA Final — Sky background
    ============================================================ */
@@ -1112,6 +1131,20 @@ footer p {
   color: var(--platinum);
   opacity: 0.6;
   margin-bottom: 0;
+}
+
+/* ── Footer — link LinkedIn ── */
+
+.footer-linkedin {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.72;
+  transition: opacity var(--t-fast);
+}
+
+.footer-linkedin:hover {
+  opacity: 1;
 }
 
 

@@ -31,6 +31,12 @@
   color: var(--powder);
 }
 
+/* Mobile menu CTA: visível sobre fundo licorice */
+.header--light .mobile-menu .cta-btn {
+  background-color: var(--powder);
+  color: var(--licorice);
+}
+
 /* ── Header scrolled — licorice (sobrescreve powder do style.css) ─── */
 
 #site-header.scrolled {
@@ -101,6 +107,31 @@
   align-items: stretch;
   gap: 6px;
   padding: 140px max(var(--sp-4), calc((100vw - 1100px) / 2 + var(--sp-4))) var(--sp-16) var(--sp-4);
+}
+
+/* ── Hero mobile — foto estática (< 900px) ── */
+
+.hero-mobile-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  margin-top: var(--sp-6);
+}
+
+@media (max-width: 899px) {
+  .hero--split {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: var(--sp-12);
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-mobile-foto {
+    display: none;
+  }
 }
 
 /* ── Acordeão de imagens ──────────────────────────────────── */
@@ -493,14 +524,23 @@
 /* ── Footer ───────────────────────────────────────────────── */
 
 .palestras-page footer {
-  background-color: var(--black-olive);
+  background-color: var(--powder);
 }
 
 .palestras-page footer p {
-  color: rgba(255,255,255,0.5);
+  color: var(--black-olive);
+  opacity: 0.6;
 }
 
 /* ── Responsividade ───────────────────────────────────────── */
+
+@media (max-width: 639px) {
+  .temas-nota,
+  .contratar-nota {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 @media (min-width: 640px) {
   .para-quem-grid {
